@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.top-menu {
+    background: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.top-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-menu li {
+    display: inline;
+    margin: 0 1em;
+}
+
+.top-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.psychologist-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+section {
+    padding: 2em;
+    border-bottom: 1px solid #ccc;
+}

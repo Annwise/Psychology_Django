@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная — Психолог</title>
+    <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+</head>
+<body>
+
+<!-- Верхнее меню -->
+<nav>
+    <ul class="top-menu">
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#price">Стоимость</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+        <li><a href="#blog">Блог</a></li>
+        <li><a href="#docs">Документы</a></li>
+    </ul>
+</nav>
+
+<!-- Приветственный блок -->
+<section id="welcome" class="welcome-section">
+    <h1>Привет! Я ваш психолог</h1>
+    <img src="{% static 'pages/images/photo.jpg' %}" alt="Фото психолога" class="psychologist-photo">
+</section>
+
+<!-- Обо мне -->
+<section id="about" class="about-section">
+    <h2>Обо мне</h2>
+    <p>Здесь будет текст о том, кто я и чем занимаюсь.</p>
+</section>
+
+<!-- Зачем нужна психотерапия -->
+<section id="why" class="why-section">
+    <h2>Зачем нужна психотерапия?</h2>
+    <p>Психотерапия помогает справиться с тревожностью, стрессом, депрессией и другими состояниями.</p>
+</section>
+
+<!-- Стоимость -->
+<section id="price" class="price-section">
+    <h2>Стоимость</h2>
+    <p>Одна консультация — 2000 рублей. Курс из 5 — 9000 рублей.</p>
+</section>
+
+<!-- Контакты -->
+<section id="contacts" class="contacts-section">
+    <h2>Контакты</h2>
+    <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+    <p>Email: example@example.com</p>
+</section>
+
+</body>
+</html>
