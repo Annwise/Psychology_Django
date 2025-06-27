@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная — Психолог{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+</head>
+<body>
+
+<!-- Верхнее меню -->
+<nav class="top-menu">
+    <ul>
+        <li><a href="{% url 'home' %}">Обо мне</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a href="#">Стоимость</a></li>
+        <li><a href="#">Контакты</a></li>
+        <li><a href="{% url 'blog' %}">Блог</a></li>
+        <li><a href="{% url 'docs' %}">Документы</a></li>
+    </ul>
+</nav>
+
+<!-- Основной контент -->
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+</body>
+</html>

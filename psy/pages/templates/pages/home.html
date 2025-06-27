@@ -1,25 +1,10 @@
+{% extends "pages/base.html" %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная — Психолог</title>
-    <link rel="stylesheet" href="{% static 'pages/style.css' %}">
-</head>
-<body>
 
-<!-- Верхнее меню -->
-<nav>
-    <ul class="top-menu">
-        <li><a href="#about">Обо мне</a></li>
-        <li><a href="#services">Услуги</a></li>
-        <li><a href="#price">Стоимость</a></li>
-        <li><a href="#contacts">Контакты</a></li>
-        <li><a href="#blog">Блог</a></li>
-        <li><a href="#docs">Документы</a></li>
-    </ul>
-</nav>
+{% block title %}Главная — Психолог{% endblock %}
 
+{% block content %}
 <!-- Приветственный блок -->
 <section id="welcome" class="welcome-section">
     <h1>Привет! Я ваш психолог</h1>
@@ -50,6 +35,4 @@
     <p>Телефон: +7 (XXX) XXX-XX-XX</p>
     <p>Email: example@example.com</p>
 </section>
-
-</body>
-</html>
+{% endblock %}
