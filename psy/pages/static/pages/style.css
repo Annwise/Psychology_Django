@@ -6,7 +6,7 @@ body {
 }
 
 .top-menu {
-    background: #333;
+    background: #012b27;
     color: white;
     padding: 1em;
     text-align: center;
@@ -35,6 +35,34 @@ body {
 }
 
 section {
-    padding: 2em;
-    border-bottom: 1px solid #ccc;
+    padding: 4em 2em; /* Отступы внутри */
+    width: 100%; /* Занимает всю ширину */
+    height: 500px;
+    margin: 0; /* Убираем внешние отступы */
+    box-shadow: none; /* Убираем тень */
+    border-radius: 0; /* Убираем скругление */
+}
+
+#welcome {
+    background-color: #566967; 
+}
+
+#about {
+    background-color: #566967; 
+}
+
+#why-therapy {
+    background-color: #fdfbf6; 
+}
+
+#why-offer {
+    background-color: #566967;
+}
+
+#price {
+    background-color: #fdfbf6;
+}
+
+#contacts {
+    background-color: #566967;
 }
