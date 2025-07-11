@@ -1,27 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Обновляем шрифт для всего сайта */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+/* Меню */
 .top-menu {
     background-color: transparent;
-    border-bottom: none;
-    color: white;
     padding: 1em;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .top-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.top-menu li {
+    padding: 10px 15px;
+    transition: background-color 0.3s;
 }
 
 .top-menu li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .top-menu a {
@@ -30,27 +41,34 @@ body {
     font-weight: bold;
 }
 
-.psychologist-photo {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
+/* Секции */
 section {
-    padding: 4em 2em; /* Отступы внутри */
-    width: 100%; /* Занимает всю ширину */
-    height: 500px;
-    margin: 0; /* Убираем внешние отступы */
-    box-shadow: none; /* Убираем тень */
-    border-radius: 0; /* Убираем скругление */
+    padding: 4em 1em; /* Уменьшил боковые отступы для мобильных */
+    margin: 0; /* Убрал авто-отступы */
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* Убираем закругления и тени */
+#welcome,
+#about,
+#why-therapy,
+#why-offer,
+#price,
+#contacts {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Цвета секций */
 #welcome {
-    background-color: #566967; 
+    background-color: #fdfbf6; 
+    text-align: center;
 }
 
 #about {
     background-color: #566967; 
+    color: white;
 }
 
 #why-therapy {
@@ -59,6 +77,7 @@ section {
 
 #why-offer {
     background-color: #566967;
+    color: white;
 }
 
 #price {
@@ -67,4 +86,170 @@ section {
 
 #contacts {
     background-color: #566967;
+    color: white;
 }
+
+/* Фото психолога */
+.psychologist-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Фото заполняет весь блок без искажений */
+    display: block;
+  }
+
+/* Для больших экранов - можно добавить ограничение по ширине контента */
+@media (min-width: 1200px) {
+    .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Общие стили */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Секции */
+section {
+    padding: 80px 0;
+    width: 100%;
+}
+
+/* Приветственный блок (полноэкранный с текстом на фото) */
+.welcome-section {
+    position: relative;
+    height: 100vh; /* На всю высоту экрана */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+.welcome-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+
+.welcome-text {
+    max-width: 600px;
+    margin-left: 10%; /* Текст слева */
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+.welcome-section h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+.welcome-section .subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+
+/* Блок "Обо мне" */
+#about {
+    margin-top: 0 !important; /* Убираем отступ сверху */
+  }
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.credentials {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+/* Карточки преимуществ */
+.therapy-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Услуги */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Контакты */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Кнопки */
+.cta-button {
+    display: inline-block;
+    background: #566967;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #3a4a48;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .welcome-section h1 {
+      font-size: 2.5rem; /* Уменьшаем заголовок */
+    }
+    
+    .welcome-text {
+      margin-left: 5%; /* Меньший отступ слева */
+      padding: 20px;
+      text-align: left;
+    }
+    
+    .welcome-section .subtitle {
+      font-size: 1.1rem;
+    }
+  }
