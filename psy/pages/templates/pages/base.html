@@ -3,28 +3,28 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Главная — Психолог{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Психолог Мария Ондрушка{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+    <!-- Подключение шрифта Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- Верхнее меню -->
-<nav class="top-menu">
-    <ul>
-        <li><a href="{% url 'home' %}">Обо мне</a></li>
-        <li><a href="#">Услуги</a></li>
-        <li><a href="#">Стоимость</a></li>
-        <li><a href="#">Контакты</a></li>
-        <li><a href="{% url 'blog' %}">Блог</a></li>
-        <li><a href="{% url 'docs' %}">Документы</a></li>
-    </ul>
-</nav>
-
-<!-- Основной контент -->
-<main>
+    <!-- Весь контент страницы (включая меню) теперь внутри welcome-section -->
     {% block content %}
     {% endblock %}
-</main>
 
+    <!-- Общие скрипты можно добавить здесь -->
+    <script>
+        // Плавный скролл для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

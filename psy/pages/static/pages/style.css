@@ -1,45 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
-/* Обновляем шрифт для всего сайта */
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 /* Меню */
 .top-menu {
-    background-color: transparent;
-    padding: 1em;
-    text-align: center;
-    position: sticky;
+    position: absolute;
     top: 0;
-    z-index: 100;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 30px 0;
 }
 
 .top-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.top-menu li {
-    padding: 10px 15px;
-    transition: background-color 0.3s;
-}
-
-.top-menu li:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    justify-content: right;
+    gap: 30px;
+    padding: 0;
+    margin: 5px;
+    list-style: none;
+    padding-left: 30px;
 }
 
 .top-menu a {
-    color: black;
+    color: white !important;
+    font-weight: 500;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px black;
+    transition: all 0.3s;
+    padding: 5px 10px;
 }
+
+.top-menu a:hover {
+    text-decoration: underline;
+}
+
+
 
 /* Секции */
 section {
@@ -95,7 +88,12 @@ section {
     height: 100%;
     object-fit: cover; /* Фото заполняет весь блок без искажений */
     display: block;
-  }
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
 
 /* Для больших экранов - можно добавить ограничение по ширине контента */
 @media (min-width: 1200px) {
@@ -125,25 +123,24 @@ section {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  }
+    margin-top: 0 !important; /* Убираем отступ сверху */
+    
+}
 
 .welcome-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: relative;
+    z-index: 2;
     height: 100%;
     display: flex;
     align-items: center;
-    z-index: 2;
-  }
+}
 
 .welcome-text {
     max-width: 600px;
     margin-left: 10%; /* Текст слева */
     color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
+    text-shadow: 1px 1px 2px black;
+}
   
 .welcome-section h1 {
     font-size: 4.5rem;
@@ -155,6 +152,7 @@ section {
 .welcome-section .subtitle {
     font-size: 1.5rem;
     font-weight: 500;
+    text-shadow: 1px 1px 2px black;
   }
 
 
@@ -252,4 +250,13 @@ section {
     .welcome-section .subtitle {
       font-size: 1.1rem;
     }
-  }
+
+    .top-menu ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+        
+    .top-menu a {
+        font-size: 0.9rem;
+    }
+}
