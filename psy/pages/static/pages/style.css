@@ -155,6 +155,100 @@ section {
     text-shadow: 1px 1px 2px black;
   }
 
+/* Секция с признаками */
+.signs-section {
+    padding: 80px 0;
+    background: #f8f4ed; /* Ваш цвет фона */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #2d3748;
+}
+
+.signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.sign-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.sign-card:hover {
+    transform: translateY(-5px);
+}
+
+.sign-number {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.sign-title {
+    font-size: 1.3rem;
+    color: #5c3416;
+    margin-bottom: 15px;
+}
+
+.sign-text {
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.action-text {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 50px 0 30px;
+    font-weight: 600;
+    color: #2d3748;
+}
+/* Стили для подзаголовка */
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #5c3416;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Контейнер для кнопки */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Дополнительные стили кнопки */
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #5c3416;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: #3a2410;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
 
 /* Блок "Обо мне" */
 #about {
@@ -231,6 +325,25 @@ section {
     transition: background 0.3s;
 }
 
+/* Анимация нажатия кнопки */
+.button-pressed {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Для будущей формы */
+.consultation-form {
+    display: none; /* Пока скрываем */
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
 .cta-button:hover {
     background: #3a4a48;
 }
@@ -258,5 +371,13 @@ section {
         
     .top-menu a {
         font-size: 0.9rem;
+    }
+}
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .action-text {
+        font-size: 1.3rem;
     }
 }
