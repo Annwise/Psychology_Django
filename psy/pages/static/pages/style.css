@@ -54,10 +54,10 @@ section {
 }
 
 /* Цвета секций */
-#welcome {
+/* #welcome {
     background-color: #fdfbf6; 
     text-align: center;
-}
+} */
 
 #about {
     background-color: #566967; 
@@ -93,7 +93,11 @@ section {
     left: 0;
     z-index: 1;
 }
-
+.psychologist-photo {
+    /* position: static; Убедитесь, что absolute удален */
+    margin-left: auto; /* Фото прижмется к правому краю */
+    max-height: 80vh;
+}
 
 /* Для больших экранов - можно добавить ограничение по ширине контента */
 @media (min-width: 1200px) {
@@ -119,12 +123,10 @@ section {
 /* Приветственный блок (полноэкранный с текстом на фото) */
 .welcome-section {
     position: relative;
-    height: 100vh; /* На всю высоту экрана */
+    height: 100vh;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    margin-top: 0 !important; /* Убираем отступ сверху */
-    
 }
 
 .welcome-content {
@@ -133,27 +135,37 @@ section {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* Ключевое изменение */
+    padding-left: 10%; /* Вместо margin-left */
+    box-sizing: border-box;
 }
 
 .welcome-text {
     max-width: 600px;
-    margin-left: 10%; /* Текст слева */
+    text-align: left !important; /* Принудительное выравнивание */
     color: white;
     text-shadow: 1px 1px 2px black;
+    flex: 0 0 auto; /* Запрещаем растягивание */
 }
-  
-.welcome-section h1 {
-    font-size: 4.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-  
-.welcome-section .subtitle {
-    font-size: 1.5rem;
-    font-weight: 500;
-    text-shadow: 1px 1px 2px black;
-  }
+
+.welcome-text h1,
+.welcome-text .subtitle {
+    text-align: left !important; /* Двойное подстраховывание */
+    width: 100%;
+    display: block;
+    margin-right: auto; /* Дополнительное выравнивание */
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Секция с признаками */
 .signs-section {
@@ -210,6 +222,13 @@ section {
     font-weight: 600;
     color: #2d3748;
 }
+.sign-icon {
+    width: 10px;
+    height: 10px;
+}
+
+
+
 /* Стили для подзаголовка */
 .section-subtitle {
     text-align: center;
@@ -372,6 +391,27 @@ section {
     .top-menu a {
         font-size: 0.9rem;
     }
+
+    /* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .welcome-content {
+        flex-direction: column;
+    }
+    .welcome-text {
+        text-align: center;  /* На мобильных можно оставить center */
+    }
+}
+
+/* Для больших экранов - можно добавить ограничение по ширине контента */
+@media (min-width: 1200px) {
+    .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+
+
 }
 @media (max-width: 768px) {
     .section-title {
