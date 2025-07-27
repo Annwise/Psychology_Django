@@ -13,19 +13,8 @@
     <!-- Весь контент страницы (включая меню) теперь внутри welcome-section -->
     {% block content %}
     {% endblock %}
+</main>
 
-    <!-- Общие скрипты можно добавить здесь -->
-    <script>
-        // Плавный скролл для якорных ссылок
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-    <script src="{% static 'pages/js/buttons.js' %}"></script>
+<script src="{% static 'pages/js/buttons.js' %}"></script>
 </body>
 </html>
