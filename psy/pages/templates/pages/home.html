@@ -8,12 +8,87 @@
 <section id="welcome" class="welcome-section">
     <div class="welcome-content">
         <div class="welcome-text">
-            <h1>МАРИЯ ОНДРУШКА</h1>
-            <p class="subtitle">Психолог-консультант, арт-терапевт, автор трансформационных программ</p>
+            <h1>Быть собой - это путь. Начните его здесь.</h1>
+            <p class="subtitle">Я - психолог-консультант. Вместе мы спокойно разберемся, что происходит, куда двигаться дальше и как вернуться к себе - без давления, стыда или суеты.</p>
         </div>
     </div>
     <img src="{% static 'pages/images/2.png' %}" alt="Фото психолога" class="psychologist-photo">
 </section>
+
+<!-- Блок Кому подойдут консультации -->
+<section id="signs" class="signs-section">
+    <div class="content-wrapper">
+        <h2 class="section-title">Кому подойдут мои консультации</h2>
+
+        <!-- Добавляем подзаголовок -->
+        <p class="section-subtitle">Возможно, внутри что-то уже подсказывает: "Я устала справляться одна". Ниже — несколько признаков, с которыми ко мне чаще всего приходят клиенты. Возможно, вы узнаете себя:</p>
+        
+        <div class="signs-grid">
+            <!-- Карточка 1 -->
+            <div class="sign-card">
+                <div class="sign-number">
+                    <img src="{% static 'pages/images/тревожность.png' %}" alt="Иконка1" class="sign-icon">
+                </div>
+                <h3 class="sign-title">Тревожность</h3>
+                <p class="sign-text">Частые стрессы, внутреннее напряжение, трудно расслабиться даже в спокойной обстановке.</p>
+            </div>
+            
+            <!-- Карточка 2 -->
+            <div class="sign-card">
+                <div class="sign-number">
+                    <img src="{% static 'pages/images/деструктивные отношения.png' %}" alt="Иконка2" class="sign-icon">
+                </div>
+                <h3 class="sign-title">Деструктивные отношения</h3>
+                <p class="sign-text">Попадаете в одни и те же отношения, где чувствуете себя подавленным или неценным.</p>
+            </div>
+            
+             <!-- Карточка 3 -->
+            <div class="sign-card">
+                <div class="sign-number">
+                    <img src="{% static 'pages/images/Болезненное прошлое.png' %}" alt="Иконка3" class="sign-icon">
+                </div>
+                <h3 class="sign-title">Болезненное прошлое</h3>
+                <p class="sign-text">Травматичный опыт продолжает влиять на настоящее.</p>
+            </div>
+            
+             <!-- Карточка 4 -->
+            <div class="sign-card">
+                <div class="sign-number">
+                    <img src="{% static 'pages/images/обесценивание.png' %}" alt="Иконка4" class="sign-icon">
+                </div>
+                <h3 class="sign-title">Обесценивание</h3>
+                <p class="sign-text">Живёте с ощущением «я недостаточно хорош», испытываете вину или стыд без явной причины.</p>
+            </div>
+            
+             <!-- Карточка 5 -->
+            <div class="sign-card">
+                <div class="sign-number">
+                    <img src="{% static 'pages/images/Неуверенность в себе.png' %}" alt="Иконка5" class="sign-icon">
+                </div>
+                <h3 class="sign-title">Неуверенность в себе</h3>
+                <p class="sign-text">Вам сложно принимать решения, отстаивать границы, доверять себе и другим.</p>
+            </div>
+            
+             <!-- Карточка 6 -->
+            <div class="sign-card">
+                <div class="sign-number">
+                    <img src="{% static 'pages/images/нет стабильности.png' %}" alt="Иконка6" class="sign-icon">
+                </div>
+                <h3 class="sign-title">Нет стабильности</h3>
+                <p class="sign-text">Много учитесь или работаете, но не можете выйти на новый финансовый уровень</p>
+            </div>
+        </div>
+        
+        <p class="action-text">Если хотя бы один пункт вам откликается — значит, работа с психологом может стать важной поддержкой и точкой опоры на пути к более здоровому и устойчивому состоянию.</p>
+        
+        <!-- Кнопка с дополнительным классом для центрирования -->
+        <div class="button-container">
+            <a href="#contacts" class="cta-button js-consultation-btn">Записаться на консультацию</a>
+        </div>
+    </div>
+</section>
+
+
 
 <!-- Обо мне -->
 <section id="about" class="about-section">
@@ -30,26 +105,6 @@
     </div>
 </section>
 
-<!-- Зачем нужна психотерапия -->
-<section id="why-therapy" class="why-section">
-    <div class="content-wrapper">
-        <h2>Зачем нужна психотерапия?</h2>
-        <div class="therapy-benefits">
-            <div class="benefit-card">
-                <h3>Тревожность</h3>
-                <p>Научно обоснованные методы снижения тревожности и панических атак</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Отношения</h3>
-                <p>Понимание паттернов поведения в отношениях</p>
-            </div>
-            <div class="benefit-card">
-                <h3>Самооценка</h3>
-                <p>Преодоление "синдрома самозванца" и принятие себя</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Услуги -->
 <section id="services" class="services-section">

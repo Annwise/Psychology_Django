@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* Обновляем шрифт для всего сайта */
+/* Шрифт для всего сайта */
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -8,37 +8,38 @@ body {
 }
 
 /* Меню */
+/* Меню */
 .top-menu {
-    background-color: transparent;
-    padding: 1em;
-    text-align: center;
-    position: sticky;
+    position: absolute;
     top: 0;
-    z-index: 100;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 30px 0;
 }
 
 .top-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.top-menu li {
-    padding: 10px 15px;
-    transition: background-color 0.3s;
-}
-
-.top-menu li:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    justify-content: right;
+    gap: 30px;
+    padding: 0;
+    margin: 5px;
+    list-style: none;
+    padding-left: 30px;
 }
 
 .top-menu a {
-    color: black;
+    color: white !important;
+    font-weight: 500;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px black;
+    transition: all 0.3s;
+    padding: 5px 10px;
+}
+
+.top-menu a:hover {
+    text-decoration: underline;
 }
 
 /* Секции */
@@ -52,7 +53,6 @@ section {
 /* Убираем закругления и тени */
 #welcome,
 #about,
-#why-therapy,
 #why-offer,
 #price,
 #contacts {
@@ -66,21 +66,18 @@ section {
     text-align: center;
 }
 
+#signs {
+    background-color: #fdfbf6; 
+}
+   
+
 #about {
     background-color: #566967; 
     color: white;
 }
 
-#why-therapy {
-    background-color: #fdfbf6; 
-}
 
-#why-offer {
-    background-color: #566967;
-    color: white;
-}
-
-#price {
+#services {
     background-color: #fdfbf6;
 }
 
@@ -97,26 +94,16 @@ section {
     display: block;
   }
 
-/* Для больших экранов - можно добавить ограничение по ширине контента */
-@media (min-width: 1200px) {
-    .content-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-}
+
 
 /* Общие стили */
 .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    
 }
 
-/* Секции */
-section {
-    padding: 80px 0;
-    width: 100%;
-}
 
 /* Приветственный блок (полноэкранный с текстом на фото) */
 .welcome-section {
@@ -136,6 +123,7 @@ section {
     display: flex;
     align-items: center;
     z-index: 2;
+
   }
 
 .welcome-text {
@@ -156,6 +144,10 @@ section {
     font-size: 1.5rem;
     font-weight: 500;
   }
+
+
+
+
 
 
 /* Блок "Обо мне" */
@@ -181,12 +173,6 @@ section {
     margin-top: 40px;
 }
 
-.benefit-card {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
 
 /* Услуги */
 .service-cards {
@@ -253,3 +239,11 @@ section {
       font-size: 1.1rem;
     }
   }
+  
+  /* Для больших экранов - можно добавить ограничение по ширине контента */
+@media (min-width: 1200px) {
+    .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
