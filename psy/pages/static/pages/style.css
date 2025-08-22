@@ -7,7 +7,7 @@ body {
   padding: 0;
 }
 
-/* Меню */
+
 /* Меню */
 .top-menu {
     position: absolute;
@@ -21,11 +21,11 @@ body {
 .top-menu ul {
     display: flex;
     justify-content: right;
-    gap: 30px;
+    gap: 35px;
     padding: 0;
     margin: 5px;
     list-style: none;
-    padding-left: 30px;
+    padding-right: 50px;
 }
 
 .top-menu a {
@@ -94,8 +94,13 @@ section {
     height: 100%;
     object-fit: cover; /* Фото заполняет весь блок без искажений */
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
-
+ 
+  
 
 
 /* Общие стили */
@@ -114,41 +119,55 @@ section {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex; 
 }
+
+
 
 .welcome-content {
     position: relative;
     z-index: 2;
-    height: 100%;
     display: flex;
     align-items: center;
-    z-index: 2;
+    flex: 1;
+    padding: 0 50px;
+}
 
-  }
 
 .welcome-text {
-    max-width: 600px;
-    text-align: left !important; /* Принудительное выравнивание */
+    max-width: 750px;
     color: white;
     text-shadow: 1px 1px 2px black;
-    flex: 0 0 auto; /* Запрещаем растягивание */
+    padding-left: 80px; /* Увеличенный отступ слева */
+    text-align: left; /* Выравнивание всего блока по левому краю */
 }
 
-.welcome-text h1,
+.welcome-text h1 {
+    font-size: 3.5rem;        /* Размер заголовка */
+    line-height: 1.2;         /* Делаем строки менее плотными */
+    margin-bottom: 20px;      /* Отступ снизу */
+    font-weight: 700;         /* Жирный шрифт */
+    text-align: left; /* Выравнивание текста по левому краю */
+    white-space: nowrap; /* Запрещает перенос слов */
+}
+
+
+.welcome-text h1 .line1,
+.welcome-text h1 .line2 {
+    display: block; /* Каждая строка на отдельной строчке */
+    font-weight: 700; /* Одинаковая жирность */
+    font-size: 3.5rem; /* Одинаковый размер */
+}
+
+
+
 .welcome-text .subtitle {
-    text-align: left !important; /* Двойное подстраховывание */
-    width: 100%;
-    display: block;
-    margin-right: auto; /* Дополнительное выравнивание */
+    font-size: 1.4rem;        /* Увеличиваем размер подзаголовка */
+    line-height: 1.6;         /* Высота строк */
+    font-weight: 500;         /* Средняя жирность */
+    max-width: 800px;         /* Ограничиваем ширину для читаемости */
+    text-align: left;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -165,6 +184,15 @@ section {
     margin-bottom: 50px;
     color: #2d3748;
 }
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    color: #2d3748;
+}
+
+
 
 .signs-grid {
     display: grid;
