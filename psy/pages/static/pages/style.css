@@ -68,25 +68,12 @@ section {
     text-align: center;
 }
 
-#signs {
-    background-color: #fdfbf6; 
-}
-   
-
 #about {
     background-color: #566967; 
     color: white;
 }
 
 
-#services {
-    background-color: #fdfbf6;
-}
-
-#contacts {
-    background-color: #566967;
-    color: white;
-}
 
 /* Фото психолога */
 .psychologist-photo {
@@ -175,7 +162,7 @@ section {
 /* Секция с признаками */
 .signs-section {
     padding: 80px 0;
-    background: #f8f4ed; /* Ваш цвет фона */
+    background: #fdfbf6; /* Ваш цвет фона */
 }
 
 .section-title {
@@ -192,30 +179,43 @@ section {
     color: #2d3748;
 }
 
-
-
 .signs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-bottom: 40px;
+    align-items: center;
 }
 
 .sign-card {
     background: white;
     padding: 30px;
     border-radius: 12px;
+    border: 2px solid #566967;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
 }
 
 .sign-card:hover {
     transform: translateY(-5px);
+    border-color: #3a4a48; /* Более темный оттенок зеленого */
+    box-shadow: 0 15px 35px rgba(86, 105, 103, 0.3); /* Зеленоватая тень */
 }
+
 
 .sign-number {
     font-size: 1.8rem;
     margin-bottom: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-icon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
 }
 
 .sign-title {
@@ -241,18 +241,131 @@ section {
 
 
 /* Блок "Обо мне" */
-#about {
-    margin-top: 0 !important; /* Убираем отступ сверху */
-  }
-.about-content {
-    display: flex;
-    gap: 40px;
-    align-items: center;
+.about-section {
+    padding: 80px 0;
+    background-color: #566967;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    
 }
 
-.credentials {
-    margin-top: 20px;
-    padding-left: 20px;
+.about-section h2 {
+    text-align: center;
+    font-size: 2.2rem; /* Как в .section-title */
+    margin-bottom: 50px;
+    color: white; /* Белый цвет для контраста */
+    font-weight: 700;
+}
+
+
+
+.about-content {
+    display: flex;
+    gap: 40px;  /* Отступ между фото и текстом */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Фото - с обводкой */
+.about-image-container {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-right: 50px; /* Сдвиг фото левее */
+}
+
+
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Текст - БЕЗ обводки */
+.about-text {
+    flex: 2;
+    padding: 20px; /* Убрали background и backdrop-filter для более чистого вида */
+    margin-left: 10px; /* Сдвиг текста правее */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+
+
+
+
+
+
+.about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.about-text .profession {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffd700;
+    margin-bottom: 30px;
+}
+
+/* Статистика */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+/* Текст о профессиональном пути */
+.about-text-p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+/* Кнопка */
+.cta-button {
+    display: inline-block;
+    background: #ffd700;
+    color: #566967;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.cta-button:hover {
+    background: #e6c200;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Карточки преимуществ */
@@ -309,6 +422,18 @@ section {
     transition: background 0.3s;
 }
 
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+
+
+
+
 /* Анимация нажатия кнопки */
 .button-pressed {
     transform: scale(0.95);
@@ -332,27 +457,3 @@ section {
     background: #3a4a48;
 }
 
-/* Для мобильных устройств */
-@media (max-width: 768px) {
-    .welcome-section h1 {
-      font-size: 2.5rem; /* Уменьшаем заголовок */
-    }
-    
-    .welcome-text {
-      margin-left: 5%; /* Меньший отступ слева */
-      padding: 20px;
-      text-align: left;
-    }
-    
-    .welcome-section .subtitle {
-      font-size: 1.1rem;
-    }
-  }
-  
-  /* Для больших экранов - можно добавить ограничение по ширине контента */
-@media (min-width: 1200px) {
-    .content-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-}
