@@ -237,9 +237,6 @@ section {
 
 
 
-
-
-
 /* Блок "Обо мне" */
 
 /* Общие стили */
@@ -260,6 +257,7 @@ section {
     font-size: 2.2rem;
     margin-bottom: 50px;
     color: white;
+    text-shadow: 1px 1px 2px black;
     font-weight: 700;
 }
 
@@ -312,13 +310,10 @@ section {
 
 }
 
-
-
-
-
 .about-name {
     font-size: 2rem;
     color: white;
+    text-shadow: 1px 1px 2px black;
     margin: 0;
     font-weight: 500; /* Не жирный */
 }
@@ -327,8 +322,10 @@ section {
     font-size: 1.2rem;
     font-weight: 500;
     color: white;
+    text-shadow: 1px 1px 2px black;
     margin: 0;
 }
+
 
 /* Статистика в одну линию */
 .stats-grid {
@@ -348,7 +345,8 @@ section {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: #ffd700;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px black;
     margin-bottom: 10px;
 }
 
@@ -356,6 +354,7 @@ section {
     font-size: 0.9rem;
     line-height: 1.5;
     color: #f0f0f0;
+    text-shadow: 1px 1px 1px black;
 }
 
 /* Текст о профессиональном пути */
@@ -363,10 +362,16 @@ section {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #f0f0f0;
+    text-shadow: 1px 1px 1px black;
     margin-bottom: 20px;
+    white-space: pre-line; /* Сохраняет переносы строк из HTML */
+}
+/* Кнопка */
+.button-container2 {
+    width: 100%;
+    margin-top: 20px;
 }
 
-/* Кнопка */
 .cta-button {
     display: inline-block;
     background: #ffd700;
@@ -376,13 +381,215 @@ section {
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 600;
+    margin-left: 50px; /* Умеренный сдвиг вправо */
+    border: 2px solid #f0f0f0; /* Обводка всегда видна */
 }
 
-.cta-button:hover {
-    background: #e6c200;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+.about-continue-section {
+    padding: 80px 0;
+    background-color: #f8f4ed;
+    color: #2d3748;
 }
+
+.about-continue-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+/* Основной контент - flex для расположения фото и текста */
+.about-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Зеркальное расположение фото и текста */
+.about-content.reverse {
+    flex-direction: row; /* Меняем порядок: текст слева, фото справа */
+}
+
+.about-content.reverse .about-image-container {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.about-content.reverse .about-text {
+    margin-right: 10px;
+    margin-left: 0;
+    text-align: left;
+}
+
+/* Фото */
+.about-image-container {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Текст */
+.about-text {
+    flex: 2;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Заголовок и подзаголовок */
+.about-header2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.about-name2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin: 0;
+    font-weight: 500;
+}
+
+.profession2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #566967;
+    margin: 0;
+}
+
+/* Текст */
+.about-text-content2 {
+    margin-bottom: 30px;
+}
+
+.about-text-p2 {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+
+/* Блок "ПРИНЦИПЫ РАБОТЫ" */
+.principles-section {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.principles-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+/* Фоновое фото - занимает весь экран */
+.principles-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/* Заголовок */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Сетка карточек */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+/* Карточка */
+.principle-card {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    color: white;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.principle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Иконка */
+.principle-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+/* Заголовок карточки */
+.principle-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+/* Текст карточки */
+.principle-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
