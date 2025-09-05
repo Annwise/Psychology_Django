@@ -62,17 +62,6 @@ section {
     box-shadow: none !important;
 }
 
-/* Цвета секций */
-/* #welcome {
-    background-color: #fdfbf6; 
-    text-align: center;
-}
-
-#about {
-    background-color: #566967; 
-    color: white;
-}
-
 
 
 /* Фото психолога */
@@ -159,7 +148,7 @@ section {
 
 
 
-/* Секция с признаками */
+/* Блок "Кому подойдут мои консультации" */
 .signs-section {
     padding: 80px 0;
     background: #fdfbf6; /* Ваш цвет фона */
@@ -237,7 +226,16 @@ section {
 
 
 
-/* Блок "Обо мне" */
+
+
+
+
+
+
+
+
+
+/* БЛОК "ОБО МНЕ" */
 
 /* Общие стили */
 .about-wrapper {
@@ -269,9 +267,6 @@ section {
     margin: 0 auto;
     padding: 0 20px;
 }
-
-
-
 
 
 
@@ -326,8 +321,17 @@ section {
     margin: 0;
 }
 
+.about-text-p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 20px;
+    white-space: pre-line; /* Сохраняет переносы строк из HTML */
+}
 
-/* Статистика в одну линию */
+
+/* Преимущества (в одну линию) */
 .stats-grid {
     display: flex;
     justify-content: space-between;
@@ -357,15 +361,23 @@ section {
     text-shadow: 1px 1px 1px black;
 }
 
-/* Текст о профессиональном пути */
-.about-text-p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #f0f0f0;
-    text-shadow: 1px 1px 1px black;
-    margin-bottom: 20px;
-    white-space: pre-line; /* Сохраняет переносы строк из HTML */
+
+/* Фото */
+.about-image-container {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
 /* Кнопка */
 .button-container2 {
     width: 100%;
@@ -386,6 +398,8 @@ section {
 }
 
 
+
+/* МОЙ ПОДХОД К ТЕРАПИИ */
 .about-continue-section {
     padding: 80px 0;
     background-color: #f8f4ed;
@@ -448,30 +462,7 @@ section {
     text-align: left;
 }
 
-/* Заголовок и подзаголовок */
-.about-header2 {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 30px;
-    align-items: flex-start;
-}
 
-.about-name2 {
-    font-size: 2rem;
-    color: #2d3748;
-    margin: 0;
-    font-weight: 500;
-}
-
-.profession2 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #566967;
-    margin: 0;
-}
-
-/* Текст */
 .about-text-content2 {
     margin-bottom: 30px;
 }
@@ -482,6 +473,47 @@ section {
     color: #4a5568;
     margin-bottom: 15px;
 }
+
+/* Список с галочками */
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.checklist li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.checklist li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #566967;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Блок "ПРИНЦИПЫ РАБОТЫ" */
@@ -505,8 +537,13 @@ section {
     z-index: 1;
 }
 
+
+
+
+
 /* Фоновое фото - занимает весь экран */
-.principles-bg {
+
+/* .principles-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -515,10 +552,20 @@ section {
     background-size: cover;
     background-position: center;
     z-index: 0;
+    
+} */
+.principles-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* Убираем скругление */
+    display: block;
+    
 }
 
+
 /* Заголовок */
-.section-title {
+.section-title2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: white;
@@ -527,18 +574,18 @@ section {
 }
 
 /* Сетка карточек */
+
 .principles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* По 2 карточки на строку */
     gap: 40px;
     max-width: 1200px;
     padding: 0 20px;
     z-index: 1;
 }
-
 /* Карточка */
 .principle-card {
-    background: rgba(0,0,0,0.7);
+    background: rgba(86, 105, 103, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 30px;
@@ -548,10 +595,18 @@ section {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+
+
+
+
 .principle-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
+
+
+
+
 
 /* Иконка */
 .principle-icon {
@@ -564,6 +619,7 @@ section {
     background: rgba(255,255,255,0.1);
     border-radius: 50%;
 }
+
 
 /* Заголовок карточки */
 .principle-title {
