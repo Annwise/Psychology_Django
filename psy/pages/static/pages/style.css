@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* Шрифт для всего сайта */
+/* ШРИФТ ДЛЯ ВСЕГО САЙТА*/
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -8,7 +8,7 @@ body {
 }
 
 
-/* Меню */
+/* МЕНЮ */
 .top-menu {
     position: absolute;
     top: 0;
@@ -54,10 +54,7 @@ section {
 
 /* Убираем закругления и тени */
 #welcome,
-#about,
-#why-offer,
-#price,
-#contacts {
+#about {
     border-radius: 0 !important;
     box-shadow: none !important;
 }
@@ -502,20 +499,6 @@ section {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Блок "ПРИНЦИПЫ РАБОТЫ" */
 .principles-section {
     position: relative;
@@ -538,12 +521,9 @@ section {
 }
 
 
-
-
-
 /* Фоновое фото - занимает весь экран */
 
-/* .principles-bg {
+.principles-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -553,15 +533,15 @@ section {
     background-position: center;
     z-index: 0;
     
-} */
+}
+
 .principles-bg-image {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    border-radius: 0; /* Убираем скругление */
-    display: block;
     
 }
+    
 
 
 /* Заголовок */
@@ -596,16 +576,10 @@ section {
 }
 
 
-
-
-
 .principle-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
-
-
-
 
 
 /* Иконка */
@@ -639,80 +613,272 @@ section {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Карточки преимуществ */
-.therapy-benefits {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+/* УСЛУГИ */
+/* Блок "Услуги" */
+.services-section {
+    padding: 80px 0;
+    background-color: #f8f4ed;
+    color: #2d3748;
 }
 
-
-/* Услуги */
-.service-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+.services-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+/* Сетка услуг */
+.services-grid {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Карточка услуги */
 .service-card {
     background: white;
+    border-radius: 12px;
     padding: 30px;
-    text-align: center;
-    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 2px solid #e6e6e6;
+    border-color: #b3704c;
+    box-shadow: 0 5px 15px rgba(179, 112, 76, 0.1);
+
 }
 
-.price {
-    font-size: 1.5em;
-    font-weight: bold;
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+/* Заголовок услуги */
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+
+
+/* Описание услуги */
+.service-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+/* Цена */
+.service-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #566967;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+
+
+
+
+.price-amount {
+    font-size: 1.2rem;
+    color: #b3704c;
+}
+.checklist-services {
+    list-style: none;
+    padding: 0;
     margin: 20px 0;
 }
 
-/* Контакты */
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+.checklist-services li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a5568;
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Кнопки */
-.cta-button {
+/* Кнопка */
+.cta-button2 {
     display: inline-block;
-    background: #566967;
+    background: #b3704c;
     color: white;
-    padding: 12px 30px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 25px;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.cta-button2:hover {
+    background: #9c5c37;
+    transform: translateY(-2px);
 }
 
 
-.button-container {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ЗАПИСАТЬСЯ С ФОРМОЙ */
+.booking-section {
+    padding: 80px 0;
+    background-color: #566967;
+    color: white;
+}
+
+.booking-wrapper {
     display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 90px;
+}
+
+.booking-image-container {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.booking-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.booking-form-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+}
+
+.booking-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-bottom-color: #ffd700;
+}
+
+.phone-input-group {
+    display: flex;
+    gap: 10px;
     align-items: center;
-    margin: 40px 0;
+}
+
+.phone-input-group select {
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.phone-input-group input[type="tel"] {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+}
+
+.submit-button {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 120px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.submit-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 
