@@ -145,7 +145,7 @@ section {
 
 
 
-/* Блок "Кому подойдут мои консультации" */
+/* БЛОК "КОМУ ПОДОЙДУТ МОИ КОНСУЛЬТАЦИИ" */
 .signs-section {
     padding: 80px 0;
     background: #fdfbf6; /* Ваш цвет фона */
@@ -155,14 +155,15 @@ section {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 50px;
-    color: #2d3748;
+    color: black;
 }
 
 .section-subtitle {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 50px;
-    color: #2d3748;
+    font-weight: 500;
+    color: black;
 }
 
 .signs-grid {
@@ -212,23 +213,14 @@ section {
 
 .sign-text {
     line-height: 1.6;
-    color: #4a5568;
+    color: black;
 }
 
 .action-text {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
   }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -252,7 +244,6 @@ section {
     font-size: 2.2rem;
     margin-bottom: 50px;
     color: white;
-    text-shadow: 1px 1px 2px black;
     font-weight: 700;
 }
 
@@ -266,11 +257,9 @@ section {
 }
 
 
-
 /* Фото */
 .about-image-container {
     flex: 1;
-    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -279,15 +268,8 @@ section {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 12px;
 }
 
-/* Текст */
-.about-text {
-    flex: 2;
-    padding: 20px;
-    text-align: left;
-}
 
 /* Заголовок и подзаголовок друг под другом */
 .about-header {
@@ -298,14 +280,11 @@ section {
     align-items: flex-start;
     margin-top: -5px; /* Убираем отступ сверху */
     padding-top: 0;
-
-
 }
 
 .about-name {
     font-size: 2rem;
     color: white;
-    text-shadow: 1px 1px 2px black;
     margin: 0;
     font-weight: 500; /* Не жирный */
 }
@@ -314,19 +293,16 @@ section {
     font-size: 1.2rem;
     font-weight: 500;
     color: white;
-    text-shadow: 1px 1px 2px black;
     margin: 0;
 }
 
 .about-text-p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: #f0f0f0;
-    text-shadow: 1px 1px 1px black;
     margin-bottom: 20px;
     white-space: pre-line; /* Сохраняет переносы строк из HTML */
 }
-
 
 /* Преимущества (в одну линию) */
 .stats-grid {
@@ -347,7 +323,7 @@ section {
     font-size: 2rem;
     font-weight: 700;
     color: #f0f0f0;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: 0.5px 0.5px 0.5px black;
     margin-bottom: 10px;
 }
 
@@ -355,23 +331,6 @@ section {
     font-size: 0.9rem;
     line-height: 1.5;
     color: #f0f0f0;
-    text-shadow: 1px 1px 1px black;
-}
-
-
-/* Фото */
-.about-image-container {
-    flex: 1;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.about-photo {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
 }
 
 
@@ -383,8 +342,8 @@ section {
 
 .cta-button {
     display: inline-block;
-    background: #ffd700;
-    color: #566967;
+    background: #566967;
+    color: white;
     padding: 12px 30px;
     border-radius: 4px;
     text-decoration: none;
@@ -392,6 +351,15 @@ section {
     font-weight: 600;
     margin-left: 50px; /* Умеренный сдвиг вправо */
     border: 2px solid #f0f0f0; /* Обводка всегда видна */
+    text-align: center;
+    /* text-shadow: 1px 1px 1px black; */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Центрирует кнопку по горизонтали */
+    margin-top: 20px;
+    width: 100%;
 }
 
 
@@ -400,14 +368,14 @@ section {
 .about-continue-section {
     padding: 80px 0;
     background-color: #f8f4ed;
-    color: #2d3748;
+    color: black;
 }
 
 .about-continue-section h2 {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 50px;
-    color: #2d3748;
+    color: black;
     font-weight: 700;
 }
 
@@ -440,7 +408,6 @@ section {
 /* Фото */
 .about-image-container {
     flex: 1;
-    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -449,7 +416,6 @@ section {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 12px;
 }
 
 /* Текст */
@@ -459,15 +425,14 @@ section {
     text-align: left;
 }
 
-
 .about-text-content2 {
     margin-bottom: 30px;
 }
 
 .about-text-p2 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #4a5568;
+    color: black;
     margin-bottom: 15px;
 }
 
@@ -482,9 +447,9 @@ section {
     position: relative;
     padding-left: 30px;
     margin-bottom: 10px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #4a5568;
+    color: black;
 }
 
 .checklist li:before {
@@ -618,7 +583,7 @@ section {
 .services-section {
     padding: 80px 0;
     background-color: #f8f4ed;
-    color: #2d3748;
+    color: black;
 }
 
 .services-wrapper {
@@ -631,7 +596,7 @@ section {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 50px;
-    color: #2d3748;
+    color: black;
     font-weight: 700;
 }
 
@@ -650,7 +615,7 @@ section {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
     border: 2px solid #e6e6e6;
-    border-color: #b3704c;
+    border-color: #566967;
     box-shadow: 0 5px 15px rgba(179, 112, 76, 0.1);
 
 }
@@ -672,7 +637,7 @@ section {
 .service-title {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #2d3748;
+    color: black;
     margin: 0;
 }
 
@@ -680,9 +645,9 @@ section {
 
 /* Описание услуги */
 .service-description {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #4a5568;
+    color: black;
     margin-bottom: 20px;
     flex: 1;
 }
@@ -695,9 +660,6 @@ section {
     margin-bottom: 15px;
     text-align: right;
 }
-
-
-
 
 
 .price-amount {
@@ -714,15 +676,15 @@ section {
     position: relative;
     padding-left: 30px;
     margin-bottom: 10px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #4a5568;
+    color: black;
 }
 
 /* Кнопка */
 .cta-button2 {
     display: inline-block;
-    background: #b3704c;
+    background: #566967;
     color: white;
     padding: 10px 20px;
     border-radius: 25px;
@@ -736,23 +698,6 @@ section {
     background: #9c5c37;
     transform: translateY(-2px);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -773,7 +718,6 @@ section {
 
 .booking-image-container {
     flex: 1;
-    border-radius: 12px;
     overflow: hidden;
 }
 
@@ -781,7 +725,6 @@ section {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 12px;
 }
 
 .booking-form-container {
@@ -880,8 +823,6 @@ section {
     background: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
 }
-
-
 
 
 

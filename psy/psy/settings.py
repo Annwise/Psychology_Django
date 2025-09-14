@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
+    'documents',
     'blog',
 ]
 
@@ -119,7 +120,8 @@ USE_TZ = True
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'pages/static'),  # Путь к вашей папке static
+    os.path.join(BASE_DIR, 'pages/static'),
+    os.path.join(BASE_DIR, 'documents/static'),  # Путь к вашей папке static
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Для collectstatic
 

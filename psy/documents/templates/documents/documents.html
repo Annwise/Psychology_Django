@@ -1,0 +1,25 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}Документы - Психолог Мария Ондрушка{% endblock %}
+
+{% block content %}
+<section class="documents-section">
+    <div class="documents-wrapper">
+        <h1 class="documents-title">Документы и сертификаты</h1>
+        
+        <div class="documents-grid">
+            <div class="document-item">
+                <img src="{% static 'documents/images/diploma1.jpg' %}" alt="Диплом" class="document-image">
+            </div>
+            <div class="document-item">
+                <img src="{% static 'documents/images/certificate1.jpg' %}" alt="Сертификат" class="document-image">
+            </div>
+            <div class="document-item">
+                <img src="{% static 'documents/images/certificate2.jpg' %}" alt="Сертификат" class="document-image">
+            </div>
+            <!-- Добавь больше документов по необходимости -->
+        </div>
+    </div>
+</section>
+{% endblock %}
