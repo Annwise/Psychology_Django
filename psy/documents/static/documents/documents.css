@@ -1,3 +1,10 @@
+.document-caption {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #566967;
+}
+
 .documents-section {
     padding: 80px 0;
     background-color: #f8f4ed;

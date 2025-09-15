@@ -121,7 +121,8 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'pages/static'),
-    os.path.join(BASE_DIR, 'documents/static'),  # Путь к вашей папке static
+    os.path.join(BASE_DIR, 'documents/static'),
+    os.path.join(BASE_DIR, 'blog/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Для collectstatic
 

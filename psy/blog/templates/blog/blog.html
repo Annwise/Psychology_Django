@@ -1,0 +1,67 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}Блог - Психолог Мария Ондрушка{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="blog-section">
+    <div class="blog-wrapper">
+        <h1 class="blog-title">Блог</h1>
+        <p class="blog-subtitle">Мои мысли о психологии, жизни и пути к себе</p>
+        
+        <div class="blog-grid">
+            <!-- Статья 1 -->
+            <div class="blog-card">
+                <div class="blog-image-container">
+                    <img src="{% static 'blog/images/blog1.jpg' %}" alt="Как перестать бояться неудач" class="blog-image">
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Как перестать бояться неудач</h3>
+                    <p class="blog-date">15 марта 2024</p>
+                    <p class="blog-excerpt">Иногда страх неудачи мешает даже начать. Рассказываю, как я сама училась рисковать и принимать ошибки как часть пути.</p>
+                </div>
+            </div>
+
+            <!-- Статья 2 -->
+            <div class="blog-card">
+                <div class="blog-image-container">
+                    <img src="{% static 'blog/images/blog2.jpg' %}" alt="Почему мы цепляемся за прошлое" class="blog-image">
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Почему мы цепляемся за прошлое</h3>
+                    <p class="blog-date">10 марта 2024</p>
+                    <p class="blog-excerpt">Ностальгия — не всегда друг. Когда воспоминания мешают жить здесь и сейчас, и как с этим работать.</p>
+                </div>
+            </div>
+
+            <!-- Статья 3 -->
+            <div class="blog-card">
+                <div class="blog-image-container">
+                    <img src="{% static 'blog/images/blog3.jpg' %}" alt="Самый главный вопрос в терапии" class="blog-image">
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Самый главный вопрос в терапии</h3>
+                    <p class="blog-date">5 марта 2024</p>
+                    <p class="blog-excerpt">То, что действительно меняет жизнь, — не совет, а вопрос. Вот какие вопросы я задаю своим клиентам.</p>
+                </div>
+            </div>
+
+            <!-- Статья 4 -->
+            <div class="blog-card">
+                <div class="blog-image-container">
+                    <img src="{% static 'blog/images/blog4.jpg' %}" alt="Как найти себя в 30 лет" class="blog-image">
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-card-title">Как найти себя в 30 лет</h3>
+                    <p class="blog-date">1 марта 2024</p>
+                    <p class="blog-excerpt">Мой личный путь от "кто я вообще?" до "я знаю, кто я". Шаги, которые помогли мне обрести ясность.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

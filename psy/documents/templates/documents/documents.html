@@ -3,22 +3,41 @@
 
 {% block title %}Документы - Психолог Мария Ондрушка{% endblock %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'documents/css/documents.css' %}">
+{% endblock %}
+
 {% block content %}
 <section class="documents-section">
     <div class="documents-wrapper">
-        <h1 class="documents-title">Документы и сертификаты</h1>
+        <h1 class="documents-title">Дипломы и сертификаты</h1>
+        
+        <p>Здесь вы можете найти информацию о сертификатах, дипломах и другой важной документации.</p>
         
         <div class="documents-grid">
+            <!-- Диплом 1 -->
             <div class="document-item">
-                <img src="{% static 'documents/images/diploma1.jpg' %}" alt="Диплом" class="document-image">
+                <img src="{% static 'documents/images/1.jpg' %}" alt="Диплом специалиста" class="document-image">
+                <p class="document-caption">Сертификат специалиста</p>
             </div>
+            
+            <!-- Сертификат 1 -->
             <div class="document-item">
-                <img src="{% static 'documents/images/certificate1.jpg' %}" alt="Сертификат" class="document-image">
+                <img src="{% static 'documents/images/2.jpg' %}" alt="Сертификат специалиста" class="document-image">
+                <p class="document-caption">Диплом специалиста</p>
             </div>
+            
+            <!-- Сертификат 2 -->
             <div class="document-item">
-                <img src="{% static 'documents/images/certificate2.jpg' %}" alt="Сертификат" class="document-image">
+                <img src="{% static 'documents/images/3.jpg' %}" alt="Политика конфиденциальности" class="document-image">
+                <p class="document-caption">Диплом специалиста</p>
             </div>
-            <!-- Добавь больше документов по необходимости -->
+            
+            <!-- Договор -->
+            <div class="document-item">
+                <img src="{% static 'documents/images/4.jpg' %}" alt="Договор оказания услуг" class="document-image">
+                <p class="document-caption">Диплом специалиста</p>
+            </div>
         </div>
     </div>
 </section>

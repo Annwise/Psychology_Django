@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),  # Главная страница
     path('docs/', include('documents.urls')),   # Документы
+    path('blog/', include('blog.urls')),   # Блог
 ]
 
 if settings.DEBUG:
