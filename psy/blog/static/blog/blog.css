@@ -1,6 +1,6 @@
 .blog-section {
     padding: 80px 0;
-    background-color: #f8f4ed;
+    background-color: white;
 }
 
 .blog-wrapper {
@@ -11,23 +11,18 @@
 
 .blog-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #2d3748;
-    font-weight: 700;
-}
-
-.blog-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin-bottom: 50px;
-    color: #566967;
+    color: black;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(4, 1fr); /* ← 4 колонки */
+    gap: 20px; /* Уменьши отступ */
+    align-items: start;
 }
 
 .blog-card {
@@ -36,11 +31,16 @@
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 2px solid #566967;
 }
 
 .blog-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: #3a4a48; 
 }
 
 .blog-image-container {
@@ -61,25 +61,44 @@
 }
 
 .blog-content {
-    padding: 25px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
 }
 
 .blog-card-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
-    color: #2d3748;
+    color: black;
     font-weight: 600;
-}
-
-.blog-date {
-    font-size: 0.9rem;
-    color: #566967;
-    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
 .blog-excerpt {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
-    color: #4a5568;
-    margin: 0;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 15px;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.read-more {
+    display: inline-block;
+    color: #b3704c;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-top: auto;
+    transition: all 0.3s ease;
+    font-weight: 700;
+}
+
+.read-more:hover {
+    color: #9c5c37;
+    text-decoration: underline;
 }

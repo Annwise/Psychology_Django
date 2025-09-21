@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Психолог Мария Ондрушка{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'pages/style.css' %}">
+    {% block extra_css %}{% endblock %}
     <!-- Подключение шрифта Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     {% block content %}
     {% endblock %}
-</main>
 </body>
 </html>
-

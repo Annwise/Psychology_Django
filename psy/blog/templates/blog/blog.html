@@ -4,61 +4,60 @@
 {% block title %}Блог - Психолог Мария Ондрушка{% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
 {% endblock %}
 
 {% block content %}
 <section class="blog-section">
     <div class="blog-wrapper">
-        <h1 class="blog-title">Блог</h1>
-        <p class="blog-subtitle">Мои мысли о психологии, жизни и пути к себе</p>
+        <h1 class="blog-title">Полезное о психологии<br>читайте в моём блоге</h1>
         
         <div class="blog-grid">
             <!-- Статья 1 -->
             <div class="blog-card">
                 <div class="blog-image-container">
-                    <img src="{% static 'blog/images/blog1.jpg' %}" alt="Как перестать бояться неудач" class="blog-image">
+                    <img src="{% static 'blog/images/11.jpg' %}" alt="Тревога или паническая атака" class="blog-image">
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-card-title">Как перестать бояться неудач</h3>
-                    <p class="blog-date">15 марта 2024</p>
-                    <p class="blog-excerpt">Иногда страх неудачи мешает даже начать. Рассказываю, как я сама училась рисковать и принимать ошибки как часть пути.</p>
+                    <h3 class="blog-card-title">Тревога или паническая атака? Разбираемся</h3>
+                    <p class="blog-excerpt">Достаточно часто ко мне обращаются клиенты, думая что у них паническая атака, а на самом деле тревога или наоборот, думая ...</p>
+                    <a href="{% url 'article' 1 %}" class="read-more">Читать статью</a>
                 </div>
             </div>
 
             <!-- Статья 2 -->
             <div class="blog-card">
                 <div class="blog-image-container">
-                    <img src="{% static 'blog/images/blog2.jpg' %}" alt="Почему мы цепляемся за прошлое" class="blog-image">
+                    <img src="{% static 'blog/images/22.jpg' %}" alt="4 способа пережить паническую атаку" class="blog-image">
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-card-title">Почему мы цепляемся за прошлое</h3>
-                    <p class="blog-date">10 марта 2024</p>
-                    <p class="blog-excerpt">Ностальгия — не всегда друг. Когда воспоминания мешают жить здесь и сейчас, и как с этим работать.</p>
+                    <h3 class="blog-card-title">4 способа пережить паническую атаку</h3>
+                    <p class="blog-excerpt">Если вы хотите спросить, что такое панические атаки, значит вы совершенно точно ими не страдаете. Самое главное это ...</p>
+                    <a href="{% url 'article' 2 %}" class="read-more">Читать статью</a>
                 </div>
             </div>
 
             <!-- Статья 3 -->
             <div class="blog-card">
                 <div class="blog-image-container">
-                    <img src="{% static 'blog/images/blog3.jpg' %}" alt="Самый главный вопрос в терапии" class="blog-image">
+                    <img src="{% static 'blog/images/33.jpg' %}" alt="Пассивная агрессия" class="blog-image">
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-card-title">Самый главный вопрос в терапии</h3>
-                    <p class="blog-date">5 марта 2024</p>
-                    <p class="blog-excerpt">То, что действительно меняет жизнь, — не совет, а вопрос. Вот какие вопросы я задаю своим клиентам.</p>
+                    <h3 class="blog-card-title">Пассивная агрессия. В чём она проявляется?</h3>
+                    <p class="blog-excerpt">"Да ты без меня никто!", "Что бы ты без меня делала". Замечали за знакомыми? Или может за собой? Это признаки пассивной агрессии ...</p>
+                    <a href="{% url 'article' 3 %}" class="read-more">Читать статью</a>
                 </div>
             </div>
 
             <!-- Статья 4 -->
             <div class="blog-card">
                 <div class="blog-image-container">
-                    <img src="{% static 'blog/images/blog4.jpg' %}" alt="Как найти себя в 30 лет" class="blog-image">
+                    <img src="{% static 'blog/images/44.jpg' %}" alt="Как снизить тревожность" class="blog-image">
                 </div>
                 <div class="blog-content">
-                    <h3 class="blog-card-title">Как найти себя в 30 лет</h3>
-                    <p class="blog-date">1 марта 2024</p>
-                    <p class="blog-excerpt">Мой личный путь от "кто я вообще?" до "я знаю, кто я". Шаги, которые помогли мне обрести ясность.</p>
+                    <h3 class="blog-card-title">Как снизить тревожность? Полезные лайфхаки</h3>
+                    <p class="blog-excerpt">Повышенная тревожность, может возникнуть в жизни каждого, но при систематическом повторении, может оказаться негативное ...</p>
+                    <a href="{% url 'article' 4 %}" class="read-more">Читать статью</a>
                 </div>
             </div>
         </div>
