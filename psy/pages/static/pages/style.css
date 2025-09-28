@@ -42,7 +42,9 @@ body {
     text-decoration: underline;
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 /* Секции */
 section {

@@ -102,3 +102,28 @@
     color: #9c5c37;
     text-decoration: underline;
 }
+
+/* Кнопка возврата на сайт */
+.back-to-site-container {
+    text-align: left;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.back-to-site {
+    display: inline-block;
+    color: black;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.back-to-site:hover {
+    background-color: #566967;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(86, 105, 103, 0.2);
+}
