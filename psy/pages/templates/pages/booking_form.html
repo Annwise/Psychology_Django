@@ -1,0 +1,54 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}Запись на консультацию{% endblock %}
+
+{% block content %}
+<div class="booking-form-container">
+    <h1>Записаться на консультацию</h1>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" class="booking-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.phone.label_tag }}
+            {{ form.phone }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.service.label_tag }}
+            {{ form.service }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.date.label_tag }}
+            {{ form.date }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.message.label_tag }}
+            {{ form.message }}
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+{% endblock %}

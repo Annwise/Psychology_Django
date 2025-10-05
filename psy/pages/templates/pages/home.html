@@ -8,7 +8,7 @@
     <nav class="top-menu">
         <ul>
             <li><a href="#about">Обо мне</a></li>
-            <li><a href="#signs">Кому подойдут</a></li>
+            <li><a href="#signs">Для кого</a></li>
             <li><a href="#services">Услуги</a></li>
             <li><a href="#booking">Записаться</a></li>
             <li><a href="{% url 'blog' %}">Блог</a></li>
@@ -96,7 +96,7 @@
         
         <!-- Кнопка с дополнительным классом для центрирования -->
         <div class="button-container">
-            <a href="#contacts" class="cta-button js-consultation-btn">Записаться на консультацию</a>
+            <a href="{% url 'booking' %}" class="cta-button js-consultation-btn">Записаться на консультацию</a>
         </div>
     </div>
 </section>
@@ -287,7 +287,7 @@
                 <div class="service-price">
                     <span class="price-amount">40 евро / 4000 ₽</span>
                 </div>
-                <a href="#" class="cta-button2">Записаться</a>
+                <a href="{% url 'booking' %}" class="cta-button2">Записаться</a>  <!-- ← Изменил ссылку -->
             </div>
 
             <!-- Услуга 2 -->
@@ -301,7 +301,7 @@
                 <div class="service-price">
                     <span class="price-amount">40 евро / 4000 ₽</span>
                 </div>
-                <a href="#" class="cta-button2">Записаться</a>
+                <a href="{% url 'booking' %}" class="cta-button2">Записаться</a>  <!-- ← Изменил ссылку -->
             </div>
 
             <!-- Услуга 3 -->
@@ -323,7 +323,7 @@
                 <div class="service-price">
                     <span class="price-amount">Индивидуально 45 евро / 4500 ₽, в группе 35 евро / 3500 ₽</span>
                 </div>
-                <a href="#" class="cta-button2">Записаться</a>
+                <a href="{% url 'booking' %}" class="cta-button2">Записаться</a>  <!-- ← Изменил ссылку -->
             </div>
         </div>
     </div>
