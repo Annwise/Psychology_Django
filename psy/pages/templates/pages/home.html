@@ -339,31 +339,7 @@
         <div class="booking-form-container">
             <h2 class="booking-title">ЗАПИСАТЬСЯ<br>НА КОНСУЛЬТАЦИЮ</h2>
             
-            <form class="booking-form">
-                <div class="form-group">
-                    <label for="name">Ваше имя</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <div class="phone-input-group">
-                        <select id="country-code" name="country-code">
-                            <option value="+7">🇷🇺 +7</option>
-                            <option value="+380">🇺🇦 +380</option>
-                            <option value="+49">🇩🇪 +49</option>
-                        </select>
-                        <input type="tel" id="phone" name="phone" placeholder=" (000) 000-00-00" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Ваш email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <button type="submit" class="submit-button">Отправить</button>
-            </form>
+            <a href="{% url 'booking' %}" class="submit-button">Записаться</a>
         </div>
     </div>
 </section>

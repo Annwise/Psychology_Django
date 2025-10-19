@@ -3,52 +3,194 @@
 
 {% block title %}Запись на консультацию{% endblock %}
 
-{% block content %}
-<div class="booking-form-container">
-    <h1>Записаться на консультацию</h1>
-    
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
+{% block extra_css %}
+<style>
+.booking-section {
+    padding: 80px 0;
+    background-color: #566967;
+    color: white;
+}
 
-    <form method="post" class="booking-form">
-        {% csrf_token %}
-        
-        <div class="form-group">
-            {{ form.name.label_tag }}
-            {{ form.name }}
+.booking-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.booking-image-container {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.booking-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.booking-form-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.booking-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-bottom-color: #ffd700;
+}
+
+.phone-input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.phone-input-group select {
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.phone-input-group input[type="tel"] {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+}
+
+.submit-button {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 120px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.submit-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="booking-section">
+    <div class="booking-wrapper">
+        <div class="booking-image-container">
+            <img src="{% static 'pages/images/767A2324.jpg' %}" alt="Записаться на консультацию" class="booking-photo">
         </div>
         
-        <div class="form-group">
-            {{ form.phone.label_tag }}
-            {{ form.phone }}
+        <div class="booking-form-container">
+            <h2 class="booking-title">ЗАПИСАТЬСЯ<br>НА КОНСУЛЬТАЦИЮ</h2>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post" class="booking-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="{{ form.name.id_for_label }}">Ваше имя</label>
+                    {{ form.name }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.phone.id_for_label }}">Телефон</label>
+                    <div class="phone-input-group">
+                        <select id="country-code" name="country-code">
+                            <option value="+7">🇷🇺 +7</option>
+                            <option value="+380">🇺🇦 +380</option>
+                            <option value="+49">🇩🇪 +49</option>
+                        </select>
+                        {{ form.phone }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Ваш email</label>
+                    {{ form.email }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.service.id_for_label }}">Услуга:</label>
+                    {{ form.service }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.date.id_for_label }}">Дата и время:</label>
+                    {{ form.date }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.message.id_for_label }}">Сообщение:</label>
+                    {{ form.message }}
+                </div>
+                
+                <button type="submit" class="submit-button">Отправить</button>
+            </form>
         </div>
-        
-        <div class="form-group">
-            {{ form.email.label_tag }}
-            {{ form.email }}
-        </div>
-        
-        <div class="form-group">
-            {{ form.service.label_tag }}
-            {{ form.service }}
-        </div>
-        
-        <div class="form-group">
-            {{ form.date.label_tag }}
-            {{ form.date }}
-        </div>
-        
-        <div class="form-group">
-            {{ form.message.label_tag }}
-            {{ form.message }}
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Отправить</button>
-    </form>
-</div>
+    </div>
+</section>
 {% endblock %}
