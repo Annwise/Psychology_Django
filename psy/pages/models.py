@@ -32,10 +32,8 @@ class Booking(models.Model):
     name = models.CharField(max_length=100, verbose_name='Имя')
     phone = models.CharField(max_length=20, verbose_name='Телефон')
     email = models.EmailField(verbose_name='Email')
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name='Услуга')
-    date = models.DateTimeField(verbose_name='Дата и время')
+    message = models.TextField(blank=True, verbose_name='Сообщение')  # Необязательное поле
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending', verbose_name='Статус')
-    message = models.TextField(blank=True, verbose_name='Сообщение')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата записи')
 
     class Meta:
@@ -44,4 +42,4 @@ class Booking(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f'{self.name} - {self.service.title}'
+        return f'{self.name} - {self.phone}'

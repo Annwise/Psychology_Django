@@ -1,5 +1,6 @@
 {% extends "pages/base.html" %}
 {% load static %}
+{% block title %}Психолог Мария Ондрушка{% endblock %}
 
 {% block content %}
 <!-- ПРИВЕТСТВЕННЫЙ БЛОК С МЕНЮ -->
@@ -96,7 +97,7 @@
         
         <!-- Кнопка с дополнительным классом для центрирования -->
         <div class="button-container">
-            <a href="{% url 'booking' %}" class="cta-button js-consultation-btn">Записаться на консультацию</a>
+            <a href="#booking" class="cta-button js-consultation-btn">Записаться на консультацию</a>
         </div>
     </div>
 </section>
@@ -287,7 +288,7 @@
                 <div class="service-price">
                     <span class="price-amount">40 евро / 4000 ₽</span>
                 </div>
-                <a href="{% url 'booking' %}" class="cta-button2">Записаться</a>  <!-- ← Изменил ссылку -->
+                <a href="#booking" class="cta-button2">Записаться</a>
             </div>
 
             <!-- Услуга 2 -->
@@ -301,7 +302,7 @@
                 <div class="service-price">
                     <span class="price-amount">40 евро / 4000 ₽</span>
                 </div>
-                <a href="{% url 'booking' %}" class="cta-button2">Записаться</a>  <!-- ← Изменил ссылку -->
+                <a href="#booking" class="cta-button2">Записаться</a>
             </div>
 
             <!-- Услуга 3 -->
@@ -323,7 +324,7 @@
                 <div class="service-price">
                     <span class="price-amount">Индивидуально 45 евро / 4500 ₽, в группе 35 евро / 3500 ₽</span>
                 </div>
-                <a href="{% url 'booking' %}" class="cta-button2">Записаться</a>  <!-- ← Изменил ссылку -->
+                <a href="#booking" class="cta-button2">Записаться</a>
             </div>
         </div>
     </div>
@@ -339,8 +340,40 @@
         <div class="booking-form-container">
             <h2 class="booking-title">ЗАПИСАТЬСЯ<br>НА КОНСУЛЬТАЦИЮ</h2>
             
-            <a href="{% url 'booking' %}" class="submit-button">Записаться</a>
+            <form id="booking-form" class="booking-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <div class="phone-input-group">
+                        <select id="country-code" name="country-code">
+                            <option value="+7">🇷🇺 +7</option>
+                            <option value="+380">🇺🇦 +380</option>
+                            <option value="+49">🇩🇪 +49</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" placeholder=" (000) 000-00-00" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Ваш email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <button type="submit" class="submit-button">Отправить</button>
+            </form>
+            
+            <div id="booking-message" style="display: none; margin-top: 20px; color: #ffd700;"></div>
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'pages/js/booking.js' %}"></script>
 {% endblock %}
