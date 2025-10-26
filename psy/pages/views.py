@@ -1,23 +1,10 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.conf import settings
 from django.template.loader import render_to_string
 from .models import Service, Booking
 from .forms import BookingForm
 import telegram
-
-
-def booking_form(request):
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            booking = form.save()
-
-            bot = telegram.Bot(token=settings.TELEGRAM_BOT_TOKEN)
-            bot.send_message(
-                chat_id='твой_chat_id',
-                text=f'Новая запись: {booking.name}, {booking.phone}, {booking.email}'
-            )
-            return JsonResponse({'success': True})
 
 
 def home(request):
@@ -29,11 +16,24 @@ def home(request):
     })
 
 
+async def send_telegram_message(chat_id, text):
+    bot = telegram.Bot(token=settings.TELEGRAM_BOT_TOKEN)
+    await bot.send_message(chat_id=chat_id, text=text)
+
+
 def booking_form(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save()
+
+            # Отправка уведомления в Telegram
+            try:
+                import asyncio
+                asyncio.run(send_telegram_message('705925519', f'Новая запись: {booking.name}, {booking.phone}, {booking.email}'))
+            except Exception as e:
+                print(f'Ошибка отправки в Telegram: {e}')
+
             return JsonResponse({'success': True})
         else:
             return JsonResponse({'success': False, 'error': 'Пожалуйста, заполните все поля корректно'})
