@@ -39,3 +39,13 @@ def booking_form(request):
             return JsonResponse({'success': False, 'error': 'Пожалуйста, заполните все поля корректно'})
 
     return JsonResponse({'success': False, 'error': 'Метод не разрешён'})
+
+
+def privacy_policy(request):
+    policy = PrivacyPolicy.objects.last()  # Берём последнюю версию
+    return render(request, 'pages/privacy.html', {'policy': policy})
+
+
+def consent_form(request):
+    consent = ConsentForm.objects.last()  # Берём последнюю версию
+    return render(request, 'pages/consent.html', {'consent': consent})

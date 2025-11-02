@@ -1,0 +1,17 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}Согласие на обработку данных{% endblock %}
+
+{% block content %}
+<div class="document-page">
+    <h1>{{ consent.title }}</h1>
+    <p><strong>Версия:</strong> {{ consent.version }}</p>
+    <p><strong>Дата вступления в силу:</strong> {{ consent.effective_date }}</p>
+    
+    <div class="document-content">
+        {{ consent.content|linebreaks }}
+    </div>
+</div>
+{% endblock %}
+

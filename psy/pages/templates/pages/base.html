@@ -16,5 +16,16 @@
     {% block content %}
     {% endblock %}
     {% block extra_js %}{% endblock %}
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="{% url 'privacy' %}">Политика конфиденциальности</a>
+            <a href="{% url 'consent' %}">Согласие на обработку данных</a>
+        </div>
+        <div class="footer-text">
+            © {{ current_year }} Психолог Мария Ондрушка. Все права защищены.
+        </div>
+    </footer>
+
 </body>
 </html>
