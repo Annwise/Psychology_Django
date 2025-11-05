@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.conf import settings
-from django.template.loader import render_to_string
-from .models import Service, Booking
+from .models import Service, Booking, PrivacyPolicy, ConsentForm
 from .forms import BookingForm
 import telegram
 
@@ -25,7 +24,15 @@ def booking_form(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            booking = form.save()
+            booking = form.save(commit=False)
+
+            # Добавь обязательные поля
+            booking.privacy_policy = PrivacyPolicy.objects.first()
+            booking.consent_form = ConsentForm.objects.first()
+            booking.accepted_privacy_policy = True
+            booking.accepted_consent = True
+
+            booking.save()
 
             # Отправка уведомления в Telegram
             try:
@@ -42,10 +49,10 @@ def booking_form(request):
 
 
 def privacy_policy(request):
-    policy = PrivacyPolicy.objects.last()  # Берём последнюю версию
+    policy = PrivacyPolicy.objects.last()
     return render(request, 'pages/privacy.html', {'policy': policy})
 
 
 def consent_form(request):
-    consent = ConsentForm.objects.last()  # Берём последнюю версию
+    consent = ConsentForm.objects.last()
     return render(request, 'pages/consent.html', {'consent': consent})
