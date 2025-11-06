@@ -372,6 +372,32 @@
         </div>
     </div>
 </section>
+
+
+<!-- КОНТАКТЫ -->
+<section id="contacts" class="contacts-section">
+    <div class="contacts-wrapper">
+        <h2 class="section-title">Контакты</h2>
+        
+        <div class="contacts-grid">
+            <div class="contact-column">
+                <h3>@ondrushka_maria_psy</h3>
+                <p><strong>Адрес:</strong> Budapest, Hungary</p>
+                <p><strong>Часы работы:</strong> 10:00 – 20:00</p>
+                <p><strong>Email:</strong> info@mariapsy</p>
+                <p><strong>Телефон:</strong> +7 (999) 123 45 67</p>
+            </div>
+            
+            <!-- Документация -->
+            <div class="document-column">
+                <h3>Документация</h3>
+                <a href="{% static 'pages/documents/privacy_policy.pdf' %}" target="_blank" class="document-button">Политика конфиденциальности</a>
+                <a href="{% static 'pages/documents/consent_form.pdf' %}" target="_blank" class="document-button">Согласие на обработку данных</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
 
 {% block extra_js %}

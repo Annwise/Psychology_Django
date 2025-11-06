@@ -57,7 +57,7 @@ class Booking(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Пользователь')
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name='Услуга')
+    # service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name='Услуга')
     privacy_policy = models.ForeignKey(PrivacyPolicy, on_delete=models.CASCADE, verbose_name='Политика конфиденциальности', null=True, blank=True)
     consent_form = models.ForeignKey(ConsentForm, on_delete=models.CASCADE, verbose_name='Форма согласия', null=True, blank=True)
     accepted_privacy_policy = models.BooleanField(default=False, verbose_name='Согласие на политику конфиденциальности')
