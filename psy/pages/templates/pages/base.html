@@ -11,7 +11,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    <footer class="site-footer">
+        <div class="footer-links">
+            {% if user.is_authenticated %}
+            <!-- Если пользователь вошёл -->
+                <a href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+            <!-- Если пользователь не вошёл -->
+                <a href="{% url 'register' %}">Регистрация</a>
+                <a href="{% url 'login' %}">Вход</a>
+            {% endif %}
+        </div>
+        <div class="footer-text">
+            © {{ current_year }} Психолог Мария Ондрушка. Все права защищены.
+        </div>
+    </footer>
 
     {% block content %}
     {% endblock %}

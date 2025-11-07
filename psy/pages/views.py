@@ -4,6 +4,23 @@ from django.conf import settings
 from .models import Service, Booking, PrivacyPolicy, ConsentForm
 from .forms import BookingForm
 import telegram
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from django.contrib import messages
+from .forms import UserRegisterForm  # ← Убедись, что импортировал
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Аккаунт {username} создан!')
+            login(request, user)
+            return redirect('home')  # Перенаправление на главную
+    else:
+        form = UserRegisterForm()
+    return render(request, 'pages/register.html', {'form': form})
 
 
 def home(request):

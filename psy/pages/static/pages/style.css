@@ -908,3 +908,33 @@ section {
 .document-button:hover {
     background: #3a4a48;
 }
+
+/* ФУТЕР */
+.site-footer {
+    background-color: #566967;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffd700;
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    color: #e2e8f0;
+}
