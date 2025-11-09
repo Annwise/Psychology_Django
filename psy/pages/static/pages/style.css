@@ -994,7 +994,7 @@ section {
 }
 
 .form-field input {
-    width: 100%;
+    width: calc(100% - 24px);
     padding: 12px;
     border: 1px solid #e2e8f0;
     border-radius: 6px;
@@ -1050,5 +1050,113 @@ section {
 }
 
 .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* СТРАНИЦА ВХОДА */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f4ed;
+    padding: 20px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.login-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.form-field {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.form-field input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    /* margin-left: 12px;
+    margin-right: 12px; */
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: #566967;
+    box-shadow: 0 0 0 3px rgba(86, 105, 103, 0.1);
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #566967;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #3a4a48;
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.register-link a {
+    color: #566967;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.password-reset {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.password-reset a {
+    color: #566967;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.password-reset a:hover {
     text-decoration: underline;
 }

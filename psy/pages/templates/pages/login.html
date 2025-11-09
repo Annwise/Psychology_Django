@@ -3,15 +3,37 @@
 {% block title %}Вход{% endblock %}
 
 {% block content %}
-<div class="login-container">
-    <h2>Вход</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Войти</button>
-    </form>
-    <p>Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>
-    <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+<div class="login-wrapper">
+    <div class="login-form">
+        <h2>Вход</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Поле: Имя пользователя -->
+            <div class="form-field">
+                <label for="{{ form.username.id_for_label }}">Имя пользователя:</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <div class="error">{{ form.username.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <!-- Поле: Пароль -->
+            <div class="form-field">
+                <label for="{{ form.password.id_for_label }}">Пароль:</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="error">{{ form.password.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <!-- Кнопка отправки -->
+            <button type="submit" class="submit-btn">Войти</button>
+        </form>
+        
+        <p class="register-link">Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>
+        <p class="password-reset"><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+    </div>
 </div>
 {% endblock %}
-
