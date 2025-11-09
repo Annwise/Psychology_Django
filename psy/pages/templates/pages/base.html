@@ -11,13 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    {% block content %}
+    {% endblock %}
+
     <footer class="site-footer">
         <div class="footer-links">
             {% if user.is_authenticated %}
-            <!-- Если пользователь вошёл -->
-                <a href="{% url 'logout' %}">Выйти</a>
+                <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-link">Выйти</button>
+                </form>
             {% else %}
-            <!-- Если пользователь не вошёл -->
                 <a href="{% url 'register' %}">Регистрация</a>
                 <a href="{% url 'login' %}">Вход</a>
             {% endif %}
@@ -27,8 +31,6 @@
         </div>
     </footer>
 
-    {% block content %}
-    {% endblock %}
     {% block extra_js %}{% endblock %}
 
 </body>

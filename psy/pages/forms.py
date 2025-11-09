@@ -5,7 +5,18 @@ from django.contrib.auth.models import User
 
 
 class UserRegisterForm(UserCreationForm):
-    email = forms.EmailField()
+    email = forms.EmailField(label='Email')
+    username = forms.CharField(label='Имя пользователя')
+    password1 = forms.CharField(
+        label='Пароль',
+        widget=forms.PasswordInput,
+        help_text='Пароль должен содержать не менее 8 символов.'
+    )
+    password2 = forms.CharField(
+        label='Подтверждение пароля',
+        widget=forms.PasswordInput,
+        help_text='Введите тот же пароль, что и выше, для подтверждения.'
+    )
 
     class Meta:
         model = User

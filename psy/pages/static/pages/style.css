@@ -938,3 +938,117 @@ section {
     font-size: 0.8rem;
     color: #e2e8f0;
 }
+
+.logout-link {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.logout-link:hover {
+    color: #b3704c;
+}
+
+/*СТРАНИЦА РЕГИСТРАЦИИ*/
+.register-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f4ed;
+    padding: 20px;
+}
+
+.register-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.register-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.form-field {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: #566967;
+    box-shadow: 0 0 0 3px rgba(86, 105, 103, 0.1);
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.hint {
+    display: block;
+    color: #6b7280;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #566967;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #3a4a48;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #566967;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
