@@ -30,6 +30,13 @@
             © {{ current_year }} Психолог Мария Ондрушка. Все права защищены.
         </div>
     </footer>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert {% if message.tags == 'error' %}alert-error{% else %}alert-success{% endif %}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
 
     {% block extra_js %}{% endblock %}
 

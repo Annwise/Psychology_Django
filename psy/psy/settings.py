@@ -136,3 +136,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_CHARSET = 'utf-8'
 
 TELEGRAM_BOT_TOKEN = '8337126745:AAE2TbkevUyzPT37rqq6WYhjIiSewOcZDFs'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -21,17 +21,14 @@ class CustomUserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
-        help_texts = {
-            'username': 'Обязательное поле. Только буквы, цифры и @/./+/-/_.',
-        }
+        fields = ('first_name', 'last_name', 'email', 'password1', 'password2')  # ← без username
 
     def save(self, commit=True):
         user = super().save(commit=False)
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.email = self.cleaned_data['email']
-        user.username = self.cleaned_data['email']  # Используем email как username
+        user.username = self.cleaned_data['email']  # ← автоматически
         if commit:
             user.save()
         return user
