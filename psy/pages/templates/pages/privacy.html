@@ -6,8 +6,6 @@
 {% block content %}
 <div class="document-page">
     <h1>{{ policy.title }}</h1>
-    <p><strong>Версия:</strong> {{ policy.version }}</p>
-    <p><strong>Дата вступления в силу:</strong> {{ policy.effective_date }}</p>
     
     <div class="document-content">
         {{ policy.content|linebreaks }}

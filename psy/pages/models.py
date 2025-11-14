@@ -1,34 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-
-class Service(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Название услуги')
-    description = models.TextField(verbose_name='Описание')
-    price = models.CharField(max_length=100, verbose_name='Цена')
-    duration = models.CharField(max_length=100, verbose_name='Продолжительность', blank=True)
-    is_active = models.BooleanField(default=True, verbose_name='Активна')
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
-    updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
-
-    class Meta:
-        verbose_name = 'Услуга'
-        verbose_name_plural = 'Услуги'
-        ordering = ['title']
-
-    def __str__(self):
-        return self.title
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class PrivacyPolicy(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название')
     content = models.TextField(verbose_name='Содержание')
-    version = models.CharField(max_length=50, verbose_name='Версия')
-    effective_date = models.DateTimeField(verbose_name='Дата вступления в силу')
 
     class Meta:
         verbose_name = 'Политика конфиденциальности'
-        verbose_name_plural = 'Политики конфиденциальности'
+        verbose_name_plural = 'Политика конфиденциальности'
 
     def __str__(self):
         return self.title
@@ -37,8 +19,6 @@ class PrivacyPolicy(models.Model):
 class ConsentForm(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название')
     content = models.TextField(verbose_name='Содержание')
-    version = models.CharField(max_length=50, verbose_name='Версия')
-    effective_date = models.DateTimeField(verbose_name='Дата вступления в силу')
 
     class Meta:
         verbose_name = 'Форма согласия'
@@ -57,7 +37,6 @@ class Booking(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Пользователь')
-    # service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name='Услуга')
     privacy_policy = models.ForeignKey(PrivacyPolicy, on_delete=models.CASCADE, verbose_name='Политика конфиденциальности', null=True, blank=True)
     consent_form = models.ForeignKey(ConsentForm, on_delete=models.CASCADE, verbose_name='Форма согласия', null=True, blank=True)
     accepted_privacy_policy = models.BooleanField(default=False, verbose_name='Согласие на политику конфиденциальности')
@@ -78,44 +57,6 @@ class Booking(models.Model):
         return f'{self.name} - {self.phone}'
 
 
-class Article(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Заголовок')
-    content = models.TextField(verbose_name='Содержание')
-    author = models.CharField(max_length=100, verbose_name='Автор')
-    published_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
-    is_active = models.BooleanField(default=True, verbose_name='Активна')
-
-    class Meta:
-        verbose_name = 'Статья'
-        verbose_name_plural = 'Статьи'
-        ordering = ['-published_date']
-
-    def __str__(self):
-        return self.title
-
-
-class Document(models.Model):
-    DOCUMENT_TYPES = [
-        ('certificate', 'Сертификат'),
-        ('diploma', 'Диплом'),
-        ('license', 'Лицензия'),
-        ('other', 'Другое'),
-    ]
-
-    title = models.CharField(max_length=200, verbose_name='Название')
-    document_type = models.CharField(max_length=20, choices=DOCUMENT_TYPES, verbose_name='Тип документа')
-    file = models.FileField(upload_to='documents/', verbose_name='Файл')
-    upload_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата загрузки')
-
-    class Meta:
-        verbose_name = 'Документ'
-        verbose_name_plural = 'Документы'
-        ordering = ['-upload_date']
-
-    def __str__(self):
-        return self.title
-
-
 class UserProfile(models.Model):
     GENDER_CHOICES = [
         ('male', 'Мужской'),
@@ -133,3 +74,36 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} - Профиль'
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    if hasattr(instance, 'userprofile'):
+        instance.userprofile.save()
+
+
+class BookingStatus(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Ожидает'),
+        ('confirmed', 'Подтверждена'),
+        ('in_progress', 'В процессе'),
+        ('completed', 'Завершена'),
+        ('cancelled', 'Отменена'),
+    ]
+
+    booking = models.OneToOneField(Booking, on_delete=models.CASCADE, verbose_name='Запись')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending', verbose_name='Статус')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
+
+    class Meta:
+        verbose_name = 'Статус записи'
+        verbose_name_plural = 'Статусы записей'
+
+    def __str__(self):
+        return f'{self.booking.name} - {self.get_status_display()}'

@@ -29,4 +29,6 @@ urlpatterns = [
     path('booking/', views.booking_form, name='booking'),
     path('privacy/', views.privacy_policy, name='privacy'),
     path('consent/', views.consent_form, name='consent'),
+    path('profile/', views.user_profile, name='user_profile'),
+    path('admin-bookings/', views.admin_bookings, name='admin_bookings'),
 ]

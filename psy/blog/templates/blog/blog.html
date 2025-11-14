@@ -11,56 +11,66 @@
 <section class="blog-section">
     <div class="blog-wrapper">
         <h1 class="blog-title">Полезное о психологии<br>читайте в моём блоге</h1>
-        
-        <div class="blog-grid">
-            <!-- Статья 1 -->
-            <div class="blog-card">
-                <div class="blog-image-container">
-                    <img src="{% static 'blog/images/11.jpg' %}" alt="Тревога или паническая атака" class="blog-image">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">Тревога или паническая атака? Разбираемся</h3>
-                    <p class="blog-excerpt">Достаточно часто ко мне обращаются клиенты, думая что у них паническая атака, а на самом деле тревога или наоборот, думая ...</p>
-                    <a href="{% url 'article' 1 %}" class="read-more">Читать статью</a>
-                </div>
+
+        <!-- Форма фильтрации и сортировки -->
+        <div class="blog-controls">
+            <div class="sort-form">
+                <label>Сортировать по:</label>
+                <select onchange="location.href='?sort=' + this.value + '&author={{ author_filter }}'">
+                    <option value="-published_date" {% if sort == '-published_date' %}selected{% endif %}>Дате (новые первыми)</option>
+                    <option value="published_date" {% if sort == 'published_date' %}selected{% endif %}>Дате (старые первыми)</option>
+                    <option value="title" {% if sort == 'title' %}selected{% endif %}>Названию</option>
+                    <option value="-title" {% if sort == '-title' %}selected{% endif %}>Названию (обратно)</option>
+                    <option value="author" {% if sort == 'author' %}selected{% endif %}>Автору</option>
+                    <option value="-author" {% if sort == '-author' %}selected{% endif %}>Автору (обратно)</option>
+                </select>
             </div>
 
-            <!-- Статья 2 -->
-            <div class="blog-card">
-                <div class="blog-image-container">
-                    <img src="{% static 'blog/images/22.jpg' %}" alt="4 способа пережить паническую атаку" class="blog-image">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">4 способа пережить паническую атаку</h3>
-                    <p class="blog-excerpt">Если вы хотите спросить, что такое панические атаки, значит вы совершенно точно ими не страдаете. Самое главное это ...</p>
-                    <a href="{% url 'article' 2 %}" class="read-more">Читать статью</a>
-                </div>
-            </div>
-
-            <!-- Статья 3 -->
-            <div class="blog-card">
-                <div class="blog-image-container">
-                    <img src="{% static 'blog/images/33.jpg' %}" alt="Пассивная агрессия" class="blog-image">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">Пассивная агрессия. В чём она проявляется?</h3>
-                    <p class="blog-excerpt">"Да ты без меня никто!", "Что бы ты без меня делала". Замечали за знакомыми? Или может за собой? Это признаки пассивной агрессии ...</p>
-                    <a href="{% url 'article' 3 %}" class="read-more">Читать статью</a>
-                </div>
-            </div>
-
-            <!-- Статья 4 -->
-            <div class="blog-card">
-                <div class="blog-image-container">
-                    <img src="{% static 'blog/images/44.jpg' %}" alt="Как снизить тревожность" class="blog-image">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">Как снизить тревожность? Полезные лайфхаки</h3>
-                    <p class="blog-excerpt">Повышенная тревожность, может возникнуть в жизни каждого, но при систематическом повторении, может оказаться негативное ...</p>
-                    <a href="{% url 'article' 4 %}" class="read-more">Читать статью</a>
-                </div>
+            <div class="filter-form">
+                <label>Фильтр по автору:</label>
+                <select onchange="location.href='?author=' + this.value + '&sort={{ sort }}'">
+                    <option value="">Все авторы</option>
+                    {% for author in authors %}
+                        <option value="{{ author }}" {% if author_filter == author %}selected{% endif %}>{{ author }}</option>
+                    {% endfor %}
+                </select>
             </div>
         </div>
+
+        <!-- Статьи -->
+        <div class="blog-grid">
+            {% for article in page_obj %}
+                <div class="blog-card">
+                    <div class="blog-image-container">
+                        <img src="{% static article.image %}" alt="{{ article.title }}" class="blog-image">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-card-title">{{ article.title }}</h3>
+                        <p class="blog-excerpt">{{ article.excerpt }}</p>
+                        <a href="{% url 'article' article.id %}" class="read-more">Читать статью</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Пагинация -->
+        {% if page_obj.has_other_pages %}
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1&sort={{ sort }}&author={{ author_filter }}">&laquo; первая</a>
+                    <a href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}&author={{ author_filter }}">предыдущая</a>
+                {% endif %}
+
+                <span class="current">
+                    Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}&sort={{ sort }}&author={{ author_filter }}">следующая</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}&sort={{ sort }}&author={{ author_filter }}">последняя &raquo;</a>
+                {% endif %}
+            </div>
+        {% endif %}
 
         <!-- Кнопка возврата на сайт -->
         <div class="back-to-site-container">

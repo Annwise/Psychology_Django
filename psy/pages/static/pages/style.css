@@ -841,6 +841,13 @@ section {
     animation: fadeIn 0.3s ease-out;
 }
 
+
+
+
+
+
+
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1284,5 +1291,111 @@ section {
   .form-field input,
   .form-field textarea {
     font-size: 0.95rem;
+  }
+}
+
+/* ЛИЧНЫЙ КАБИНЕТ */
+.profile-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.profile-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Грид-контейнер */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Левая колонка — 1 часть, правая — 2 части */
+  gap: 2rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.profile-sidebar {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+.profile-sidebar p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.profile-main {
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+.profile-main h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.profile-main ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-main li {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.profile-main li:last-child {
+  margin-bottom: 0;
+}
+
+/* Кнопка "На главную" */
+.back-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .profile-container {
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .profile-container h2 {
+    font-size: 1.3rem;
   }
 }

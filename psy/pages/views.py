@@ -1,19 +1,18 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.conf import settings
-from .models import Service, Booking, PrivacyPolicy, ConsentForm
+from .models import Booking, PrivacyPolicy, ConsentForm, BookingStatus
 from .forms import BookingForm, CustomUserRegisterForm, CustomAuthenticationForm
 import telegram
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.contrib.auth import login
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 def home(request):
-    services = Service.objects.filter(is_active=True)
     form = BookingForm()
     return render(request, 'pages/home.html', {
-        'services': services,
         'form': form
     })
 
@@ -62,7 +61,7 @@ def booking_form(request):
             # Проверь, есть ли документы
             privacy_policy = PrivacyPolicy.objects.first()
             consent_form = ConsentForm.objects.first()
-            
+
             if not privacy_policy or not consent_form:
                 return JsonResponse({'success': False, 'error': 'Документы политики и согласия не найдены'})
 
@@ -72,6 +71,8 @@ def booking_form(request):
             booking.accepted_consent = True
 
             booking.save()
+            # Создаём статус для записи
+            BookingStatus.objects.create(booking=booking, status='pending')
 
             # Отправка уведомления в Telegram
             try:
@@ -95,3 +96,22 @@ def privacy_policy(request):
 def consent_form(request):
     consent = ConsentForm.objects.last()
     return render(request, 'pages/consent.html', {'consent': consent})
+
+
+def is_admin(user):
+    return user.is_staff
+
+
+@login_required
+def user_profile(request):
+    # Личный кабинет — показывает только записи текущего пользователя
+    bookings = Booking.objects.filter(email=request.user.email)
+    return render(request, 'pages/profile.html', {'bookings': bookings})
+
+
+@login_required
+@user_passes_test(is_admin)
+def admin_bookings(request):
+    # Страница для админа
+    bookings = Booking.objects.all()
+    return render(request, 'pages/admin_bookings.html', {'bookings': bookings})

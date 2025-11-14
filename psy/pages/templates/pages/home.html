@@ -364,15 +364,22 @@
                     <label for="email">Ваш email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                
+
                 <button type="submit" class="submit-button">Отправить</button>
+
+                <!-- галочка согласия -->
+                <div class="consent-text">
+                    Нажимая на кнопку, вы даете согласие на обработку своих персональных данных,
+                    соглашаетесь с <a href="{% url 'privacy' %}" target="_blank">политикой конфиденциальности</a>
+                    и <a href="{% url 'consent' %}" target="_blank">согласием на обработку данных</a>,
+                    гарантируете, что предварительно ознакомились с вышеуказанными документами.
+                </div>
             </form>
             
             <div id="booking-message" style="display: none; margin-top: 20px; color: #ffd700;"></div>
         </div>
     </div>
 </section>
-
 
 <!-- КОНТАКТЫ -->
 <section id="contacts" class="contacts-section">

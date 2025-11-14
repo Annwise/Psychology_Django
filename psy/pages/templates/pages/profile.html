@@ -1,0 +1,33 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <h2>Личный кабинет</h2>
+
+    <div class="profile-grid">
+        <!-- Левая колонка -->
+        <div class="profile-sidebar">
+            <p>Привет, {{ user.first_name|default:"Пользователь" }}!</p>
+            <p><a href="/" class="back-btn">← На главную</a></p>
+        </div>
+
+        <!-- Правая колонка -->
+        <div class="profile-main">
+            <h3>Ваши записи:</h3>
+            {% if bookings %}
+                <ul>
+                {% for booking in bookings %}
+                    <li>
+                        {{ booking.name }} — {{ booking.service.title|default:"Без услуги" }} — {{ booking.created_at|date:"d.m.Y H:i" }}
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>У вас пока нет записей.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

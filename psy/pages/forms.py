@@ -37,7 +37,7 @@ class CustomUserRegisterForm(UserCreationForm):
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['name', 'phone', 'email', 'message']  # Убрана 'service'
+        fields = ['name', 'phone', 'email', 'message']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ваше имя'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Телефон'}),

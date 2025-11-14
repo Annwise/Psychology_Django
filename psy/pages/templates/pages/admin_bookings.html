@@ -1,0 +1,18 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Все записи (Админ){% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <h2>Все записи</h2>
+    <ul>
+    {% for booking in bookings %}
+        <li>
+            {{ booking.name }} ({{ booking.email }}) — {{ booking.service.title|default:"Без услуги" }} — {{ booking.created_at|date:"d.m.Y H:i" }}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <p><a href="/" class="back-btn">← На главную</a></p>
+</div>
+{% endblock %}
