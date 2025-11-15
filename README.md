@@ -6,20 +6,20 @@
 
 ## Установка и запуск
 
-1. Клонирование репозитория:
+1. ### Клонирование репозитория:
    ```bash
    git clone <ссылка_на_репозиторий>
    cd psy
 
-2. Установка зависимостей:
+2. ### Установка зависимостей:
     ```bash
    pip install -r requirements.txt
 
-3. Выполнить миграции:
+3. ### Выполнить миграции:
     ```bash
    python manage.py migrate
 
-4. Запустить сервер:
+4. ### Запустить сервер:
     ```bash
     python manage.py runserver
 
@@ -29,11 +29,11 @@
 
 Отправка данных через AJAX на `/booking/`.
 
-**Метод:** POST  
-**URL:** `/booking/`  
-**Тип данных:** JSON
+#### Метод: POST  
+#### URL: `/booking/`  
+#### Тип данных: JSON
 
-**Пример тела запроса:**
+##### Пример тела запроса:
 ```json
 {
   "name": "Анна",
@@ -41,25 +41,24 @@
   "email": "anna@example.com",
 }
 
-**Пример ответа:**
+#### Пример ответа:
 ```json
 {
   "success": true
 }
-
-**Ошибки:**
+#### Ошибки: 
 
 {"success": false, "error": "Пожалуйста, заполните все поля корректно"}
 {"success": false, "error": "Документы политики и согласия не найдены"}
 
 ## Скриншоты интерфейса
 
-![Главная страница](screenshots/home.PNG)
-![Форма записи](screenshots/form.PNG)
-![Страница регистрации](screenshots/register.PNG)
-![Страница входа](screenshots/login.PNG)
-![Услуги](screenshots/service.PNG)
-![Админ-панель](screenshots/admin.PNG)
+![Главная страница](screenshots/home.png)
+![Форма записи](screenshots/form.png)
+![Страница регистрации](screenshots/register.png)
+![Страница входа](screenshots/login.png)
+![Услуги](screenshots/service.png)
+![Админ-панель](screenshots/admin.png)
 
 ## Обработка ошибок
 
