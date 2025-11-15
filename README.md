@@ -53,12 +53,12 @@ URL: `/booking/`
 
 ## Скриншоты интерфейса
 
-![Главная страница](https://raw.githubusercontent.com/Annwise/Psychology_Django/main/screnshots/home.png)
-![Форма записи](https://raw.githubusercontent.com/Annwise/Psychology_Django/main/screnshots/form.png)
-![Регистрация](https://raw.githubusercontent.com/Annwise/Psychology_Django/main/screnshots/register.png)
-![Страница входа](https://raw.githubusercontent.com/Annwise/Psychology_Django/main/screnshots/login.png)
-![Услуги](https://raw.githubusercontent.com/Annwise/Psychology_Django/main/screnshots/service.png)
-![Админ-панель](https://raw.githubusercontent.com/Annwise/Psychology_Django/main/screnshots/admin.png)
+![Главная страница](screnshots/home.png)
+![Форма записи](screnshots/form.png)
+![Регистрация](screnshots/register.png)
+![Страница входа](screnshots/login.png)
+![Услуги](screnshots/service.png)
+![Админ-панель](screnshots/admin.png)
 
 ## Обработка ошибок
 
