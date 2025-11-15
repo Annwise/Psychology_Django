@@ -100,3 +100,98 @@ INFO 2025-11-15 17:29:24,001 basehttp 19276 19600 "GET /blog/ HTTP/1.1" 200 5077
 INFO 2025-11-15 17:29:24,067 basehttp 19276 19600 "GET /static/blog/blog.css HTTP/1.1" 304 0
 INFO 2025-11-15 17:29:24,068 basehttp 19276 19604 "GET /static/blog/images/33.jpg HTTP/1.1" 304 0
 INFO 2025-11-15 17:29:24,073 basehttp 19276 19720 "GET /static/blog/images/44.jpg HTTP/1.1" 304 0
+INFO 2025-11-15 19:46:18,446 autoreload 22940 25376 Watching for file changes with StatReloader
+INFO 2025-11-15 19:46:28,946 basehttp 22940 22576 "GET / HTTP/1.1" 200 27037
+INFO 2025-11-15 19:46:29,140 basehttp 22940 22576 "GET /static/pages/style.css HTTP/1.1" 304 0
+INFO 2025-11-15 19:50:30,765 views 22940 22576 Новая запись: Ульяна (ulana@example.com)
+INFO 2025-11-15 19:50:30,802 views 22940 26560 Отчёт по записи 16 создан: C:\Users\User\Psychology_Django-2\psy\reports\booking_report_16_20251115_195030.csv
+INFO 2025-11-15 19:50:33,697 basehttp 22940 22576 "POST /booking/ HTTP/1.1" 200 17
+INFO 2025-11-15 22:45:03,107 basehttp 22940 30188 "GET / HTTP/1.1" 200 27037
+INFO 2025-11-15 22:45:03,168 basehttp 22940 30188 "GET /static/pages/style.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:48:41,482 basehttp 22940 30188 "GET /register/ HTTP/1.1" 200 3366
+INFO 2025-11-15 22:50:18,669 basehttp 22940 30188 "GET /login/ HTTP/1.1" 200 2175
+INFO 2025-11-15 22:51:51,786 basehttp 22940 31312 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-11-15 22:51:51,860 basehttp 22940 31312 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-11-15 22:51:51,889 basehttp 22940 31312 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:51:51,894 basehttp 22940 31356 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:51:51,897 basehttp 22940 31360 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:51:51,971 basehttp 22940 31356 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:51:51,972 basehttp 22940 31360 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:51:51,976 basehttp 22940 31312 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:51:51,993 basehttp 22940 31312 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:05,144 basehttp 22940 31312 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4340
+INFO 2025-11-15 22:52:13,118 basehttp 22940 31312 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-11-15 22:52:13,174 basehttp 22940 31312 "GET /admin/ HTTP/1.1" 200 13703
+INFO 2025-11-15 22:52:13,217 basehttp 22940 31312 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:13,261 basehttp 22940 31312 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:13,271 basehttp 22940 31312 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,515 basehttp 22940 31312 "GET /admin/pages/booking/ HTTP/1.1" 200 25096
+INFO 2025-11-15 22:52:18,561 basehttp 22940 31312 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,573 basehttp 22940 31356 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,595 basehttp 22940 31360 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-15 22:52:18,596 basehttp 22940 31312 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,602 basehttp 22940 31356 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,610 basehttp 22940 31360 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,611 basehttp 22940 31536 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,626 basehttp 22940 31312 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,630 basehttp 22940 31356 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,632 basehttp 22940 31540 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,634 basehttp 22940 31360 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,638 basehttp 22940 31312 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,640 basehttp 22940 31544 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,700 basehttp 22940 31544 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,755 basehttp 22940 31312 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,755 basehttp 22940 31544 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:18,767 basehttp 22940 31312 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:22,955 basehttp 22940 31312 "GET /admin/pages/bookingstatus/ HTTP/1.1" 200 17687
+INFO 2025-11-15 22:52:23,003 basehttp 22940 31312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-15 22:52:26,935 basehttp 22940 31312 "GET /admin/pages/booking/ HTTP/1.1" 200 25096
+INFO 2025-11-15 22:52:26,990 basehttp 22940 31312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-15 22:52:30,984 basehttp 22940 31312 "GET /admin/pages/bookingstatus/ HTTP/1.1" 200 17687
+INFO 2025-11-15 22:52:31,101 basehttp 22940 31312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-15 22:52:33,005 basehttp 22940 31312 "GET /admin/pages/bookingstatus/10/change/ HTTP/1.1" 200 13921
+INFO 2025-11-15 22:52:33,051 basehttp 22940 31544 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:33,053 basehttp 22940 31360 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:33,055 basehttp 22940 31312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-15 22:52:36,653 basehttp 22940 31312 "POST /admin/pages/bookingstatus/10/change/ HTTP/1.1" 302 0
+INFO 2025-11-15 22:52:36,685 basehttp 22940 31312 "GET /admin/pages/bookingstatus/ HTTP/1.1" 200 17966
+INFO 2025-11-15 22:52:36,760 basehttp 22940 31312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-15 22:52:36,806 basehttp 22940 31312 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-11-15 22:52:39,572 basehttp 22940 31312 "GET /admin/pages/booking/ HTTP/1.1" 200 25096
+INFO 2025-11-15 22:52:39,619 basehttp 22940 31312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-15 22:52:45,321 basehttp 22940 31312 "GET /admin/pages/bookingstatus/ HTTP/1.1" 200 17707
+INFO 2025-11-15 22:52:45,370 basehttp 22940 31312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-15 22:52:54,991 basehttp 22940 31312 "GET /admin/ HTTP/1.1" 200 13645
+INFO 2025-11-15 23:10:28,355 autoreload 22940 25376 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 23:10:31,333 autoreload 30948 23108 Watching for file changes with StatReloader
+INFO 2025-11-15 23:10:35,206 autoreload 30948 23108 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 23:10:37,121 autoreload 32856 32860 Watching for file changes with StatReloader
+INFO 2025-11-15 23:11:47,049 autoreload 32856 32860 C:\Users\User\Psychology_Django-2\psy\psy\urls.py changed, reloading.
+INFO 2025-11-15 23:11:48,831 autoreload 33392 33396 Watching for file changes with StatReloader
+INFO 2025-11-15 23:12:01,771 autoreload 33392 33396 C:\Users\User\Psychology_Django-2\psy\psy\urls.py changed, reloading.
+INFO 2025-11-15 23:12:03,635 autoreload 33768 33772 Watching for file changes with StatReloader
+WARNING 2025-11-15 23:23:08,428 log 33768 21524 Not Found: /nesushchestvuyushaya-stranitsa/
+WARNING 2025-11-15 23:23:08,429 basehttp 33768 21524 "GET /nesushchestvuyushaya-stranitsa/ HTTP/1.1" 404 6175
+INFO 2025-11-15 23:25:07,573 autoreload 33768 33772 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 23:25:09,396 autoreload 33900 33904 Watching for file changes with StatReloader
+INFO 2025-11-15 23:25:14,127 autoreload 33900 33904 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 23:25:16,092 autoreload 34056 34060 Watching for file changes with StatReloader
+INFO 2025-11-15 23:25:35,182 autoreload 34056 34060 C:\Users\User\Psychology_Django-2\psy\pages\urls.py changed, reloading.
+INFO 2025-11-15 23:25:37,040 autoreload 34464 34468 Watching for file changes with StatReloader
+ERROR 2025-11-15 23:25:49,229 log 34464 34640 Internal Server Error: /test-500/
+Traceback (most recent call last):
+  File "C:\Users\User\Psychology_Django-2\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Psychology_Django-2\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Psychology_Django-2\psy\pages\views.py", line 176, in test_500
+    raise Exception("Тест ошибки 500")
+Exception: Тест ошибки 500
+ERROR 2025-11-15 23:25:49,237 basehttp 34464 34640 "GET /test-500/ HTTP/1.1" 500 71061
+INFO 2025-11-15 23:28:02,388 autoreload 34464 34468 C:\Users\User\Psychology_Django-2\psy\pages\urls.py changed, reloading.
+INFO 2025-11-15 23:28:04,932 autoreload 33020 34096 Watching for file changes with StatReloader
+INFO 2025-11-15 23:28:09,048 autoreload 33020 34096 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 23:28:10,866 autoreload 25560 21868 Watching for file changes with StatReloader
+INFO 2025-11-15 23:28:17,999 autoreload 25560 21868 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 23:28:19,758 autoreload 33628 34216 Watching for file changes with StatReloader
+ERROR 2025-11-15 23:38:25,553 views 34436 21488 Документы политики и согласия не найдены

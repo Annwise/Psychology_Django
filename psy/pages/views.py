@@ -9,6 +9,10 @@ from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 import logging
+import threading
+import csv
+from datetime import datetime
+import os
 
 logger = logging.getLogger('pages')
 
@@ -61,6 +65,29 @@ async def send_telegram_message(chat_id, text):
     await bot.send_message(chat_id=chat_id, text=text)
 
 
+def generate_booking_report_async(booking):
+    # Функция, которая создаёт отчёт в фоне
+    report_dir = os.path.join(settings.BASE_DIR, 'reports')
+    os.makedirs(report_dir, exist_ok=True)
+
+    report_path = os.path.join(report_dir, f'booking_report_{booking.id}_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv')
+
+    with open(report_path, 'w', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['id', 'name', 'email', 'phone', 'created_at']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+        writer.writerow({
+            'id': booking.id,
+            'name': booking.name,
+            'email': booking.email,
+            'phone': booking.phone,
+            'created_at': booking.created_at.strftime('%Y-%m-%d %H:%M:%S')
+        })
+
+    logger.info(f'Отчёт по записи {booking.id} создан: {report_path}')
+
+
 def booking_form(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -86,6 +113,10 @@ def booking_form(request):
 
             # Создаём статус для записи
             BookingStatus.objects.create(booking=booking, status='pending')
+
+            # Создаём отчёт в фоне
+            thread = threading.Thread(target=generate_booking_report_async, args=(booking,))
+            thread.start()
 
             # Отправка уведомления в Telegram
             try:
@@ -130,3 +161,11 @@ def admin_bookings(request):
     # Страница для админа
     bookings = Booking.objects.all()
     return render(request, 'pages/admin_bookings.html', {'bookings': bookings})
+
+
+def page_not_found(request, exception):
+    return render(request, 'pages/404.html', status=404)
+
+
+def server_error(request):
+    return render(request, 'pages/500.html', status=500)
