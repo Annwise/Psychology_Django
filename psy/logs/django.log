@@ -1,0 +1,102 @@
+INFO 2025-11-15 16:56:05,503 autoreload 1676 9804 Watching for file changes with StatReloader
+INFO 2025-11-15 16:56:11,622 basehttp 1676 13092 "GET / HTTP/1.1" 200 27392
+INFO 2025-11-15 16:56:11,754 basehttp 1676 13092 "GET /static/pages/style.css HTTP/1.1" 304 0
+INFO 2025-11-15 16:56:18,694 basehttp 1676 13092 "GET /profile/ HTTP/1.1" 200 1932
+INFO 2025-11-15 16:56:21,765 basehttp 1676 13092 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-11-15 16:56:21,773 basehttp 1676 13092 "GET / HTTP/1.1" 200 27037
+INFO 2025-11-15 16:56:27,253 basehttp 1676 13092 "GET /login/ HTTP/1.1" 200 2175
+WARNING 2025-11-15 16:56:35,409 views 1676 13092 Ошибка входа: <ul class="errorlist nonfield"><li>Неверный email или пароль.</li></ul>
+INFO 2025-11-15 16:56:35,413 basehttp 1676 13092 "POST /login/ HTTP/1.1" 200 2206
+INFO 2025-11-15 16:56:52,623 views 1676 13092 Пользователь annalucky589@yandex.ru вошёл
+INFO 2025-11-15 16:56:52,638 basehttp 1676 13092 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-11-15 16:56:52,657 basehttp 1676 13092 "GET / HTTP/1.1" 200 27392
+INFO 2025-11-15 16:57:03,780 views 1676 13092 Новая запись: Анна (annalucky589@yandex.ru)
+INFO 2025-11-15 16:57:06,239 basehttp 1676 13092 "POST /booking/ HTTP/1.1" 200 17
+INFO 2025-11-15 17:01:07,330 basehttp 1676 16240 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-11-15 17:01:07,339 basehttp 1676 16240 "GET / HTTP/1.1" 200 27037
+INFO 2025-11-15 17:08:04,940 autoreload 1676 9804 C:\Users\User\Psychology_Django-2\psy\psy\settings.py changed, reloading.
+INFO 2025-11-15 17:08:06,608 autoreload 16812 13536 Watching for file changes with StatReloader
+INFO 2025-11-15 17:08:11,436 autoreload 16812 13536 C:\Users\User\Psychology_Django-2\psy\psy\settings.py changed, reloading.
+INFO 2025-11-15 17:08:13,076 autoreload 15884 16980 Watching for file changes with StatReloader
+INFO 2025-11-15 17:08:54,807 autoreload 15884 16980 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:08:56,468 autoreload 17148 17152 Watching for file changes with StatReloader
+INFO 2025-11-15 17:09:19,782 autoreload 17148 17152 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:09:21,560 autoreload 14832 400 Watching for file changes with StatReloader
+INFO 2025-11-15 17:09:32,345 autoreload 14832 400 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:09:34,235 autoreload 17372 17212 Watching for file changes with StatReloader
+INFO 2025-11-15 17:09:39,331 autoreload 17372 17212 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:09:42,185 autoreload 17064 14928 Watching for file changes with StatReloader
+INFO 2025-11-15 17:10:35,004 autoreload 17064 14928 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:10:36,731 autoreload 17976 17980 Watching for file changes with StatReloader
+INFO 2025-11-15 17:12:05,751 autoreload 17976 17980 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:12:07,867 autoreload 17572 17600 Watching for file changes with StatReloader
+INFO 2025-11-15 17:12:20,477 autoreload 17572 17600 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:12:22,191 autoreload 17356 17864 Watching for file changes with StatReloader
+INFO 2025-11-15 17:12:31,171 autoreload 17356 17864 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:12:32,848 autoreload 13748 13768 Watching for file changes with StatReloader
+INFO 2025-11-15 17:12:40,363 autoreload 13748 13768 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:12:42,010 autoreload 3648 17672 Watching for file changes with StatReloader
+INFO 2025-11-15 17:12:45,813 autoreload 3648 17672 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:12:47,248 autoreload 18356 18344 Watching for file changes with StatReloader
+INFO 2025-11-15 17:13:01,322 autoreload 18356 18344 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:13:03,237 autoreload 18080 18068 Watching for file changes with StatReloader
+INFO 2025-11-15 17:13:43,814 autoreload 18080 18068 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:13:45,936 autoreload 18180 17528 Watching for file changes with StatReloader
+INFO 2025-11-15 17:13:48,821 autoreload 18180 17528 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:13:50,173 autoreload 18192 17864 Watching for file changes with StatReloader
+INFO 2025-11-15 17:13:58,698 autoreload 18192 17864 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:14:00,212 autoreload 15868 16184 Watching for file changes with StatReloader
+INFO 2025-11-15 17:14:21,813 autoreload 15868 16184 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:14:23,309 autoreload 18200 18148 Watching for file changes with StatReloader
+INFO 2025-11-15 17:14:27,134 autoreload 18200 18148 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:14:28,726 autoreload 17896 17884 Watching for file changes with StatReloader
+INFO 2025-11-15 17:14:32,520 autoreload 17896 17884 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:14:34,174 autoreload 17932 17508 Watching for file changes with StatReloader
+INFO 2025-11-15 17:14:37,942 autoreload 17932 17508 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:14:39,570 autoreload 18148 17324 Watching for file changes with StatReloader
+INFO 2025-11-15 17:15:53,348 autoreload 18148 17324 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:15:55,383 autoreload 18940 18720 Watching for file changes with StatReloader
+INFO 2025-11-15 17:15:59,138 autoreload 18940 18720 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:16:01,448 autoreload 19108 17112 Watching for file changes with StatReloader
+INFO 2025-11-15 17:16:06,733 autoreload 19108 17112 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:16:08,765 autoreload 17640 19336 Watching for file changes with StatReloader
+INFO 2025-11-15 17:16:12,975 autoreload 17640 19336 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:16:14,664 autoreload 13412 18708 Watching for file changes with StatReloader
+INFO 2025-11-15 17:16:35,149 autoreload 13412 18708 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:16:37,192 autoreload 19092 19104 Watching for file changes with StatReloader
+INFO 2025-11-15 17:16:43,938 autoreload 19092 19104 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:16:45,668 autoreload 13816 18068 Watching for file changes with StatReloader
+INFO 2025-11-15 17:16:49,066 autoreload 13816 18068 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:16:50,504 autoreload 18560 18564 Watching for file changes with StatReloader
+INFO 2025-11-15 17:16:53,742 autoreload 18560 18564 C:\Users\User\Psychology_Django-2\psy\blog\views.py changed, reloading.
+INFO 2025-11-15 17:16:55,309 autoreload 18492 10604 Watching for file changes with StatReloader
+ERROR 2025-11-15 17:21:00,003 log 18492 17112 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\User\Psychology_Django-2\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\Psychology_Django-2\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\Psychology_Django-2\psy\pages\views.py", line 22, in home
+    services = Service.objects.filter(is_active=True)
+               ^^^^^^^
+NameError: name 'Service' is not defined. Did you mean: 'services'?
+ERROR 2025-11-15 17:21:00,038 basehttp 18492 17112 "GET / HTTP/1.1" 500 72020
+INFO 2025-11-15 17:22:51,270 autoreload 18492 10604 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:22:53,402 autoreload 15504 2408 Watching for file changes with StatReloader
+INFO 2025-11-15 17:25:01,087 autoreload 15504 2408 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:25:02,875 autoreload 16144 17632 Watching for file changes with StatReloader
+INFO 2025-11-15 17:25:06,842 autoreload 16144 17632 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:25:09,010 autoreload 18824 16356 Watching for file changes with StatReloader
+INFO 2025-11-15 17:25:12,457 autoreload 18824 16356 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:25:14,151 autoreload 19072 18604 Watching for file changes with StatReloader
+INFO 2025-11-15 17:25:27,910 autoreload 19072 18604 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:25:29,579 autoreload 5244 18708 Watching for file changes with StatReloader
+INFO 2025-11-15 17:26:01,758 autoreload 5244 18708 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:26:03,480 autoreload 17784 19156 Watching for file changes with StatReloader
+INFO 2025-11-15 17:28:42,078 autoreload 17784 19156 C:\Users\User\Psychology_Django-2\psy\pages\views.py changed, reloading.
+INFO 2025-11-15 17:28:43,776 autoreload 19276 19000 Watching for file changes with StatReloader
+INFO 2025-11-15 17:29:21,281 basehttp 19276 19600 "GET / HTTP/1.1" 200 27037
+INFO 2025-11-15 17:29:24,001 basehttp 19276 19600 "GET /blog/ HTTP/1.1" 200 5077
+INFO 2025-11-15 17:29:24,067 basehttp 19276 19600 "GET /static/blog/blog.css HTTP/1.1" 304 0
+INFO 2025-11-15 17:29:24,068 basehttp 19276 19604 "GET /static/blog/images/33.jpg HTTP/1.1" 304 0
+INFO 2025-11-15 17:29:24,073 basehttp 19276 19720 "GET /static/blog/images/44.jpg HTTP/1.1" 304 0

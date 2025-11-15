@@ -8,6 +8,9 @@ from django.shortcuts import redirect
 from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
+import logging
+
+logger = logging.getLogger('pages')
 
 
 def home(request):
@@ -41,9 +44,15 @@ def custom_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
+            logger.info(f'Пользователь {user.username} вошёл')
             return redirect('home')
+        else:
+            error_text = ' '.join([str(error) for error in form.errors.values()])
+            logger.warning(f'Ошибка входа: {error_text}')
+            return render(request, 'pages/login.html', {'form': form})
     else:
         form = CustomAuthenticationForm()
+
     return render(request, 'pages/login.html', {'form': form})
 
 
@@ -63,6 +72,7 @@ def booking_form(request):
             consent_form = ConsentForm.objects.first()
 
             if not privacy_policy or not consent_form:
+                logger.error('Документы политики и согласия не найдены')
                 return JsonResponse({'success': False, 'error': 'Документы политики и согласия не найдены'})
 
             booking.privacy_policy = privacy_policy
@@ -71,6 +81,9 @@ def booking_form(request):
             booking.accepted_consent = True
 
             booking.save()
+
+            logger.info(f'Новая запись: {booking.name} ({booking.email})')
+
             # Создаём статус для записи
             BookingStatus.objects.create(booking=booking, status='pending')
 
@@ -79,10 +92,12 @@ def booking_form(request):
                 import asyncio
                 asyncio.run(send_telegram_message('705925519', f'Новая запись: {booking.name}, {booking.phone}, {booking.email}'))
             except Exception as e:
+                logger.error(f'Ошибка отправки в Telegram: {e}')
                 print(f'Ошибка отправки в Telegram: {e}')
 
             return JsonResponse({'success': True})
         else:
+            logger.warning(f'Ошибка валидации формы: {form.errors}')
             return JsonResponse({'success': False, 'error': 'Пожалуйста, заполните все поля корректно'})
 
     return JsonResponse({'success': False, 'error': 'Метод не разрешён'})
