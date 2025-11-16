@@ -59,12 +59,12 @@ URL: `/booking/`
 
 ## Скриншоты интерфейса
 
-![Главная страница](/screnshots/home.png)
-![Форма записи](/README.mdscrenshots/form.png)
-![Регистрация](/screnshots/register.png)
-![Страница входа](/screnshots/login.png)
-![Услуги](/screnshots/service.png)
-![Админ-панель](/screnshots/admin.png)
+![Главная страница](psy/screenshots/home.png)
+![Форма записи](psy/screenshots/form.png)
+![Регистрация](psy/screenshots/register.png)
+![Страница входа](psy/screenshots/login.png)
+![Услуги](psy/screenshots/service.png)
+![Админ-панель](psy/screenshots/admin.png)
 
 ## Обработка ошибок
 
