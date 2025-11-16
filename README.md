@@ -33,32 +33,38 @@ URL: `/booking/`
 Тип данных: JSON  
 
 **Пример тела запроса:**
-
+```json
 {
   "name": "Анна",
   "phone": "+79991234567",
   "email": "anna@example.com"
 }
+```
 
 **Пример ответа:**
-
+```json
 {
   "success": true
 }
+```
 
 **Ошибки:** 
+```json
+{"success": false, "error": "Пожалуйста, заполните все поля корректно"}
+```
 
-- {"success": false, "error": "Пожалуйста, заполните все поля корректно"}
-- {"success": false, "error": "Документы политики и согласия не найдены"}
+```json
+{"success": false, "error": "Документы политики и согласия не найдены"}
+```
 
 ## Скриншоты интерфейса
 
-![Главная страница](screnshots/home.png)
-![Форма записи](screnshots/form.png)
-![Регистрация](screnshots/register.png)
-![Страница входа](screnshots/login.png)
-![Услуги](screnshots/service.png)
-![Админ-панель](screnshots/admin.png)
+![Главная страница](/screnshots/home.png)
+![Форма записи](/README.mdscrenshots/form.png)
+![Регистрация](/screnshots/register.png)
+![Страница входа](/screnshots/login.png)
+![Услуги](/screnshots/service.png)
+![Админ-панель](/screnshots/admin.png)
 
 ## Обработка ошибок
 
